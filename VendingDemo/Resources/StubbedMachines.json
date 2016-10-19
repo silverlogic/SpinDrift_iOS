@@ -1,0 +1,24 @@
+[
+    {
+        "address": "152 Beach Road The Gateway East",
+        "description": "Soft drinks and snacks available for sale",
+        "distance": 30.59,
+        "latitude": "1.299319",
+        "longitude": "103.858925",
+        "model": "1",
+        "name": "Snacks",
+        "serial": "1000",
+        "serviceId": "fff0"
+    },
+    {
+        "address": "152 Beach Road The Gateway East",
+        "description": "Soft drinks and snacks available for sale",
+        "distance": 30.59,
+        "latitude": "1.299319",
+        "longitude": "103.858925",
+        "model": "1",
+        "name": "Drinks",
+        "serial": "1001",
+        "serviceId": "fff0"
+    }
+]
