@@ -17,7 +17,7 @@ class Settings : NSObject {
     static let sharedInstance: Settings = Settings()
     
     var useStubbedMachines: Bool {
-        get { return (UserDefaults.standard.object(forKey: "useStubbedMachines") as? Bool) ?? false }
+        get { return UserDefaults.standard.bool(forKey: "useStubbedMachines") }
         set { UserDefaults.standard.set(newValue, forKey: "useStubbedMachines") }
     }
     
@@ -42,11 +42,11 @@ class Settings : NSObject {
     }
     
     var useMobileLocation: Bool {
-        get { return (UserDefaults.standard.object(forKey: "useMobileLocation") as? Bool) ?? false }
+        get { return UserDefaults.standard.bool(forKey: "useMobileLocation") }
         set { UserDefaults.standard.set(newValue, forKey: "useMobileLocation") }
     }
     
-    var stubbedLocation : CLLocation {
+    var hotelLocation : CLLocation {
         if let locationString = Bundle.main.object(forInfoDictionaryKey: "StubbedLocation") as? String {
             let components = locationString.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             if components.count == 2, let latitude = Double(components[0]), let longitude = Double(components[1]) {
@@ -55,6 +55,18 @@ class Settings : NSObject {
         }
         
         return CLLocation(latitude: 0, longitude: 0)
+    }
+    
+    var stubbedLocation: CLLocation {
+        get {
+            let latitude = UserDefaults.standard.double(forKey: "latitude")
+            let longitude = UserDefaults.standard.double(forKey: "longitude")
+            return CLLocation(latitude: latitude, longitude: longitude)
+        }
+        set {
+            UserDefaults.standard.set(newValue.coordinate.latitude, forKey: "latitude")
+            UserDefaults.standard.set(newValue.coordinate.longitude, forKey: "longitude")
+        }
     }
     
     var serverUrl: URL {
@@ -71,6 +83,15 @@ class Settings : NSObject {
     private override init() {
         super.init()
         
+        if !UserDefaults.standard.bool(forKey: "firstTime") {
+            useStubbedMachines = false
+            resultType = .allSuccess
+            useMobileLocation = true
+            stubbedLocation = hotelLocation
+            
+            UserDefaults.standard.set(true, forKey: "firstTime")
+        }
+        
         useBluetoothSimulator = resultType == nil
     }
 }
@@ -84,7 +105,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var bluetoothSimulatorSwitch: UISwitch!
     @IBOutlet weak var serverUrlTextField: UITextField!
     @IBOutlet weak var resultTypeTextField: UITextField!
-    @IBOutlet weak var locationSegment: UISegmentedControl!
+    @IBOutlet weak var mobileLocationSwitch: UISwitch!
+    @IBOutlet weak var latitudeTextField: UITextField!
+    @IBOutlet weak var longitudeTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,11 +128,15 @@ class SettingsViewController: UIViewController {
         resultTypeTextField.inputAccessoryView = toolBar
         resultTypeTextField.inputView = pickerView
         
+        latitudeTextField.inputAccessoryView = toolBar
+        longitudeTextField.inputAccessoryView = toolBar
+        
         bluetoothSimulatorSwitch.isOn = settings.useBluetoothSimulator
         stubbedMachinesSwitch.isOn = settings.useStubbedMachines
         serverUrlTextField.text = settings.serverUrl.absoluteString
         serverUrlTextField.isEnabled = !settings.useStubbedMachines
-        locationSegment.selectedSegmentIndex = settings.useMobileLocation ? 0 : 1
+        mobileLocationSwitch.isOn = settings.useMobileLocation
+        enableMobileLocation(flag: settings.useMobileLocation)
         
         settings.addObserver(self, forKeyPath: useBluetoothSimulatorKey, options: [.initial, .new], context: nil)
         
@@ -157,21 +184,32 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func locationSegmentChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            settings.useMobileLocation = true
-        } else {
-            settings.useMobileLocation = false
-        }
+    @IBAction func mobileLocationSwitched(_ sender: UISwitch) {
+        enableMobileLocation(flag: sender.isOn)
     }
     
     // MARK: - Private methods
+    func enableMobileLocation(flag: Bool) {
+        settings.useMobileLocation = flag
+        
+        latitudeTextField.text = "\(Settings.sharedInstance.stubbedLocation.coordinate.latitude)"
+        latitudeTextField.isEnabled = !flag
+        
+        longitudeTextField.text = "\(Settings.sharedInstance.stubbedLocation.coordinate.longitude)"
+        longitudeTextField.isEnabled = !flag
+    }
     func dismissSettings() {
         self.dismiss(animated: true, completion: nil)
     }
     
     func hideKeyboard() {
-        resultTypeTextField.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -199,16 +237,49 @@ extension SettingsViewController : UIPickerViewDataSource {
 
 extension SettingsViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        switch textField {
+        case serverUrlTextField:
+            textField.resignFirstResponder()
+            return true
+        default:
+            if textField.text == nil {
+                return false
+            }
+            textField.resignFirstResponder()
+            return true
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text, let url = URL(string: text) {
-            settings.serverUrl = url
-        } else {
-            let alert = UIAlertController(title: "Error!", message: "Invalid url", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
+        switch textField {
+        case serverUrlTextField:
+            if let text = textField.text, let url = URL(string: text) {
+                settings.serverUrl = url
+            } else {
+                showError(message: "Invalid url")
+            }
+        case latitudeTextField:
+            guard let text = textField.text, let latitude = Double(text) else {
+                latitudeTextField.text = "\(Settings.sharedInstance.stubbedLocation.coordinate.latitude)"
+                showError(message: "Invalid latitude")
+                return
+            }
+            
+            let stubbedLocation = Settings.sharedInstance.stubbedLocation.coordinate
+            let location = CLLocation(latitude: latitude, longitude: stubbedLocation.longitude)
+            Settings.sharedInstance.stubbedLocation = location
+        case longitudeTextField:
+            guard let text = textField.text, let longitude = Double(text) else {
+                longitudeTextField.text = "\(Settings.sharedInstance.stubbedLocation.coordinate.latitude)"
+                showError(message: "Invalid longitude")
+                return
+            }
+            
+            let stubbedLocation = Settings.sharedInstance.stubbedLocation.coordinate
+            let location = CLLocation(latitude: stubbedLocation.latitude, longitude: longitude)
+            Settings.sharedInstance.stubbedLocation = location
+        default:
+            break
         }
     }
 }

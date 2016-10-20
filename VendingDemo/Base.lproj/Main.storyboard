@@ -408,19 +408,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BFB-LZ-TJy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="TRu-mk-zOk"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Mobile"/>
-                                    <segment title="Hotel"/>
-                                </segments>
-                                <connections>
-                                    <action selector="locationSegmentChanged:" destination="1cN-dT-d97" eventType="valueChanged" id="G7B-Ll-gdS"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-LA-sia">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Mobile Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-LA-sia">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -430,27 +418,68 @@
                                     <action selector="stubbedMachinesSwitched:" destination="1cN-dT-d97" eventType="valueChanged" id="xX4-vl-jUW"/>
                                 </connections>
                             </switch>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQ7-Lm-t9s">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1cN-dT-d97" id="bVj-QB-QqQ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJx-FJ-nSw">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1cN-dT-d97" id="jpE-de-cbr"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ges-I9-Dhd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3i-GO-5pM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfF-nr-o50">
+                                <connections>
+                                    <action selector="mobileLocationSwitched:" destination="1cN-dT-d97" eventType="valueChanged" id="7hf-Cz-QYB"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sv3-9k-Sjt" firstAttribute="leading" secondItem="Irj-Sj-lIL" secondAttribute="leading" id="0EY-hP-NKV"/>
                             <constraint firstItem="Mc7-vX-jsQ" firstAttribute="top" secondItem="Wds-tq-1f0" secondAttribute="bottom" constant="18" id="0fX-vs-fGP"/>
-                            <constraint firstItem="BFB-LZ-TJy" firstAttribute="top" secondItem="Irj-Sj-lIL" secondAttribute="bottom" constant="15" id="3cJ-1f-sC8"/>
-                            <constraint firstItem="Hhm-LA-sia" firstAttribute="centerY" secondItem="BFB-LZ-TJy" secondAttribute="centerY" id="9ht-Ry-ETN"/>
+                            <constraint firstItem="eJx-FJ-nSw" firstAttribute="leading" secondItem="bQ7-Lm-t9s" secondAttribute="trailing" constant="17" id="1fx-V2-B8Q"/>
+                            <constraint firstItem="bQ7-Lm-t9s" firstAttribute="baseline" secondItem="eJx-FJ-nSw" secondAttribute="baseline" id="6BG-lN-TbB"/>
+                            <constraint firstItem="QfF-nr-o50" firstAttribute="trailing" secondItem="eJx-FJ-nSw" secondAttribute="trailing" id="Dve-7L-z1s"/>
                             <constraint firstItem="sv3-9k-Sjt" firstAttribute="centerX" secondItem="DJ8-rg-vqy" secondAttribute="centerX" id="F9M-8U-e4t"/>
                             <constraint firstItem="nky-ro-lmj" firstAttribute="trailing" secondItem="Owm-Xj-eY5" secondAttribute="trailingMargin" id="K81-Uh-f0S"/>
                             <constraint firstItem="DJ8-rg-vqy" firstAttribute="top" secondItem="sv3-9k-Sjt" secondAttribute="bottom" constant="8" symbolic="YES" id="KSe-4j-Vb5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C3i-GO-5pM" secondAttribute="trailing" constant="86" id="MqR-NX-3et"/>
+                            <constraint firstItem="QfF-nr-o50" firstAttribute="leading" secondItem="LLL-xy-ph1" secondAttribute="leading" id="OE2-5s-u0O"/>
                             <constraint firstItem="Wds-tq-1f0" firstAttribute="leading" secondItem="Owm-Xj-eY5" secondAttribute="leadingMargin" id="Uuv-5r-2Ts"/>
                             <constraint firstItem="Irj-Sj-lIL" firstAttribute="leading" secondItem="Hhm-LA-sia" secondAttribute="leading" id="X3t-2T-PK3"/>
                             <constraint firstItem="Mc7-vX-jsQ" firstAttribute="leading" secondItem="sv3-9k-Sjt" secondAttribute="leading" id="X7g-cS-XkU"/>
-                            <constraint firstItem="Irj-Sj-lIL" firstAttribute="trailing" secondItem="BFB-LZ-TJy" secondAttribute="trailing" id="YDY-6o-a3m"/>
+                            <constraint firstItem="ges-I9-Dhd" firstAttribute="top" secondItem="Hhm-LA-sia" secondAttribute="bottom" constant="18" id="YqP-Vv-EuM"/>
                             <constraint firstItem="nky-ro-lmj" firstAttribute="leading" secondItem="LLL-xy-ph1" secondAttribute="leading" id="ZCK-XY-V4e"/>
                             <constraint firstItem="Wds-tq-1f0" firstAttribute="top" secondItem="lIB-M5-Xnu" secondAttribute="bottom" constant="14" id="bWt-ME-P9D"/>
+                            <constraint firstItem="QfF-nr-o50" firstAttribute="top" secondItem="Irj-Sj-lIL" secondAttribute="bottom" constant="14" id="geY-gO-6a7"/>
                             <constraint firstItem="LLL-xy-ph1" firstAttribute="trailing" secondItem="sv3-9k-Sjt" secondAttribute="trailing" id="iFG-Ha-zFy"/>
+                            <constraint firstItem="Hhm-LA-sia" firstAttribute="centerY" secondItem="QfF-nr-o50" secondAttribute="centerY" id="kDH-8e-WgT"/>
+                            <constraint firstItem="eJx-FJ-nSw" firstAttribute="top" secondItem="C3i-GO-5pM" secondAttribute="bottom" constant="9" id="lX8-RQ-YfZ"/>
+                            <constraint firstItem="ges-I9-Dhd" firstAttribute="leading" secondItem="bQ7-Lm-t9s" secondAttribute="leading" id="oIu-w4-kAu"/>
                             <constraint firstItem="sv3-9k-Sjt" firstAttribute="top" secondItem="LLL-xy-ph1" secondAttribute="bottom" constant="19" id="oZp-60-q3W"/>
+                            <constraint firstItem="C3i-GO-5pM" firstAttribute="leading" secondItem="eJx-FJ-nSw" secondAttribute="leading" id="pEr-wB-mno"/>
                             <constraint firstItem="Irj-Sj-lIL" firstAttribute="top" secondItem="DJ8-rg-vqy" secondAttribute="bottom" constant="8" symbolic="YES" id="qPY-3s-mrx"/>
+                            <constraint firstItem="bQ7-Lm-t9s" firstAttribute="top" secondItem="ges-I9-Dhd" secondAttribute="bottom" constant="8" symbolic="YES" id="sEx-Mi-Rog"/>
                             <constraint firstItem="sv3-9k-Sjt" firstAttribute="trailing" secondItem="Irj-Sj-lIL" secondAttribute="trailing" id="sr7-v6-s1k"/>
                             <constraint firstItem="LLL-xy-ph1" firstAttribute="top" secondItem="nky-ro-lmj" secondAttribute="bottom" constant="8" symbolic="YES" id="tFL-k3-nWC"/>
+                            <constraint firstItem="Hhm-LA-sia" firstAttribute="leading" secondItem="ges-I9-Dhd" secondAttribute="leading" id="v8H-lc-oBs"/>
                             <constraint firstItem="nky-ro-lmj" firstAttribute="top" secondItem="lIB-M5-Xnu" secondAttribute="bottom" constant="8" symbolic="YES" id="vEv-fm-U8B"/>
                             <constraint firstItem="Wds-tq-1f0" firstAttribute="leading" secondItem="Mc7-vX-jsQ" secondAttribute="leading" id="vQz-zv-QJW"/>
                         </constraints>
@@ -458,7 +487,9 @@
                     <navigationItem key="navigationItem" id="Kpn-ww-ouh"/>
                     <connections>
                         <outlet property="bluetoothSimulatorSwitch" destination="LLL-xy-ph1" id="dXB-FH-64j"/>
-                        <outlet property="locationSegment" destination="BFB-LZ-TJy" id="p5f-yk-3Ha"/>
+                        <outlet property="latitudeTextField" destination="bQ7-Lm-t9s" id="eyq-90-GYx"/>
+                        <outlet property="longitudeTextField" destination="eJx-FJ-nSw" id="F1K-c2-U9w"/>
+                        <outlet property="mobileLocationSwitch" destination="QfF-nr-o50" id="52D-Bn-Jax"/>
                         <outlet property="resultTypeTextField" destination="Irj-Sj-lIL" id="7TH-mJ-4BL"/>
                         <outlet property="serverUrlTextField" destination="sv3-9k-Sjt" id="e5g-PQ-4EY"/>
                         <outlet property="stubbedMachinesSwitch" destination="nky-ro-lmj" id="Whw-Vx-ZED"/>
