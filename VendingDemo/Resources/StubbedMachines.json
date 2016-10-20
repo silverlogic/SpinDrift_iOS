@@ -1,24 +1,24 @@
-[
-    {
-        "address": "152 Beach Road The Gateway East",
-        "description": "Soft drinks and snacks available for sale",
-        "distance": 30.59,
-        "latitude": "1.299319",
-        "longitude": "103.858925",
-        "model": "1",
-        "name": "Snacks",
-        "serial": "1000",
-        "serviceId": "fff0"
-    },
-    {
-        "address": "152 Beach Road The Gateway East",
-        "description": "Soft drinks and snacks available for sale",
-        "distance": 30.59,
-        "latitude": "1.299319",
-        "longitude": "103.858925",
-        "model": "1",
-        "name": "Drinks",
-        "serial": "1001",
-        "serviceId": "fff0"
-    }
-]
+ [
+      {
+          "address": "3355 S Las Vegas Blvd The Venetian",
+          "distance": 54.88,
+          "serial": "1017",
+          "latitude": "36.121174",
+          "name": "Mastercard Vending 1",
+          "description": "Soft drinks and snacks available for sale",
+          "model": "1",
+          "serviceId": "fff0",
+          "longitude": "-115.16961"
+      },
+      {
+          "address": "3355 S Las Vegas Blvd The Venetian",
+          "distance": 54.88,
+          "serial": "1018",
+          "latitude": "36.121174",
+          "name": "Mastercard Vending 2",
+          "description": "Soft drinks and snacks available for sale",
+          "model": "1",
+          "serviceId": "fff0",
+          "longitude": "-115.16961"
+      }
+  ]

@@ -94,9 +94,6 @@ class ViewController: UIViewController {
                 do {
                     print(response)
                     self.nearbyMachines = try response.mapArray(type: Machine.self)
-                    if self.nearbyMachines.count > 3 {
-                        self.nearbyMachines.removeSubrange(3..<self.nearbyMachines.count)
-                    }
                 } catch {
                     self.showAlert(title: "Nearby machines", message: "Unable to fetch from server")
                 }
@@ -165,7 +162,7 @@ extension ViewController : UITableViewDataSource {
         }
         
         let machine = nearbyMachines[indexPath.row]
-        cell.configureCell(machine: machine, image: images[indexPath.row])
+        cell.configureCell(machine: machine, image: images[indexPath.row % images.count])
         
         return cell
     }
