@@ -90,11 +90,11 @@
 For testing purposes `VendController` also exposes a separate initializer `init(config: ControllerResultConfig)`. You can use it if you don't want to interact with bluetooth simulator. You still need to test it on an actual device.
 This is already done in the settings screen. You can access the screen by tapping on the left bar button. Here you can specify if you want to use bluetooth simulator and if not then what response you are expecting.
 
-ControllerResultConfig is an enum with following values:
-    * `allSuccess`. Everything is successful
-    * `deviceNotLocated`. Device could not be located while scanning
-    * `connectionFailed`. Device could not be connected
-    * `vendingFailed` Vending failed
+#### ControllerResultConfig is an enum with following values:
+1. `allSuccess`. Everything is successful
+2. `deviceNotLocated`. Device could not be located while scanning
+3. `connectionFailed`. Device could not be connected
+4. `vendingFailed` Vending failed
 
 [Vending SDK]: <url>
 [Mastercard Vending]: <https://developer.mastercard.com/product/mastercard-vending>
