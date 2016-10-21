@@ -87,14 +87,16 @@
 8. `unexpectedDisconnection` occurs if the connection was abruptly closed
 
 ### Testing
-For testing purposes `VendController` also exposes a separate initializer `init(config: ControllerResultConfig)`. You can use it if you don't want to interact with bluetooth simulator. You still need to test it on an actual device.
-This is already done in the settings screen. You can access the screen by tapping on the left bar button. Here you can specify if you want to use bluetooth simulator and if not then what response you are expecting.
+For testing purposes `VendController` also exposes a separate initializer `init(config: ControllerResultConfig)`. This initializer will start the `VendController` in stub mode. You can use it if you don't want to interact with bluetooth simulator. You still need to test it on an actual device.
+Each value in `ControllerResultConfig` represents what you want to expect from the controller. So for example if you want to stub a complete vending success flow then you can pass `allSuccess` and if you want to expect an error during vending then you can pass `vendingFailed`.
 
 #### ControllerResultConfig is an enum with following values:
 1. `allSuccess`. Everything is successful
 2. `deviceNotLocated`. Device could not be located while scanning
 3. `connectionFailed`. Device could not be connected
 4. `vendingFailed` Vending failed
+
+**This is already done in the settings screen**. You can access the screen by tapping on the left bar button. Here you can specify if you want to use bluetooth simulator and if not then what response you are expecting.
 
 [Vending SDK]: <url>
 [Mastercard Vending]: <https://developer.mastercard.com/product/mastercard-vending>
