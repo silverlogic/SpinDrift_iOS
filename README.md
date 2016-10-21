@@ -51,12 +51,12 @@
     * parameter deviceSerial: Serial string of the target device
     * parameter serviceId: Service id of the target device.
     * parameter maxAmount: Maximum amount to allow for vending. Vending machine maximum amount limit will be used if the provided amount is greater than what the machine can allow.
-2. Connect to the device `connect`. The device is searched first and if the device is found according to the parameters provided in `init` method then a connection is established. Throws `VendError.alreadyConnected` exception if the connection is already in progress.
-3. Disconnect from the device `disconnect`. You should wait for `disconnected` delegate method before attempting to connect again.
+2. Connect to the device `func connect()`. The device is searched first and if the device is found according to the parameters provided in `init` method then a connection is established. Throws `VendError.alreadyConnected` exception if the connection is already in progress.
+3. Disconnect from the device `func disconnect()`. You should wait for `disconnected` delegate method before attempting to connect again.
 4. Approve auth `func approveAuth(_ authApprovalPayload: String)`.
     * parameter authApprovalPayload: Auth approval payload that will be verified on the device to approve the authorization of the amount requested
-5. Disapprove auth request `disapprove`
-6. Keep connection alive `keepAlive`. This must be called to keep the connection alive after specific intervals because the connection is short-lived.
+5. Disapprove auth request `func disapprove()`
+6. Keep connection alive `func keepAlive()`. This must be called to keep the connection alive after specific intervals because the connection is short-lived.
 7. Select product on the device `func selectProduct(productId: String)`.
     * paramter productId: Id of the product to select. This can result in `invalidProduct` delegate method to be called if the provided product id is not valid.
 
@@ -98,5 +98,5 @@ Each value in `ControllerResultConfig` represents what you want to expect from t
 
 **This is already done in the settings screen**. You can access the screen by tapping on the left bar button. Here you can specify if you want to use bluetooth simulator and if not then what response you are expecting.
 
-[Vending SDK]: <url>
+[Vending SDK]: <https://developer.mastercard.com/media/e1/7f/dbdda8b240be816229cf16bffacbVendingSDK.framework.zip>
 [Mastercard Vending]: <https://developer.mastercard.com/product/mastercard-vending>
