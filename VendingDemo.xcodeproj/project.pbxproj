@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		524616581DB5BF0D0072D4B1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524616571DB5BF0D0072D4B1 /* SettingsViewController.swift */; };
 		5246165A1DB5ED4A0072D4B1 /* StubbedMachines.json in Resources */ = {isa = PBXBuildFile; fileRef = 524616591DB5ED4A0072D4B1 /* StubbedMachines.json */; };
-		5246169E1DB736180072D4B1 /* VendingSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5246169D1DB736180072D4B1 /* VendingSDK.framework */; };
-		5246169F1DB736180072D4B1 /* VendingSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5246169D1DB736180072D4B1 /* VendingSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524616A41DB9EE2D0072D4B1 /* VendingSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */; };
+		524616A51DB9EE2D0072D4B1 /* VendingSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524D2C6D1D9026D500880018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D2C6C1D9026D500880018 /* AppDelegate.swift */; };
 		524D2C6F1D9026D500880018 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D2C6E1D9026D500880018 /* ViewController.swift */; };
 		524D2C721D9026D500880018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D2C701D9026D500880018 /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5246169F1DB736180072D4B1 /* VendingSDK.framework in Embed Frameworks */,
+				524616A51DB9EE2D0072D4B1 /* VendingSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +49,7 @@
 		0EDF52ED56A5C45FE8E9AD76 /* Pods-VendingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VendingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo.release.xcconfig"; sourceTree = "<group>"; };
 		524616571DB5BF0D0072D4B1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		524616591DB5ED4A0072D4B1 /* StubbedMachines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = StubbedMachines.json; path = Resources/StubbedMachines.json; sourceTree = "<group>"; };
-		5246169D1DB736180072D4B1 /* VendingSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VendingSDK.framework; sourceTree = "<group>"; };
+		524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VendingSDK.framework; sourceTree = "<group>"; };
 		524D2C691D9026D500880018 /* VendingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524D2C6C1D9026D500880018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524D2C6E1D9026D500880018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5246169E1DB736180072D4B1 /* VendingSDK.framework in Frameworks */,
 				5BF5C52204E94B5BC64AE07A /* Pods_VendingDemo.framework in Frameworks */,
+				524616A41DB9EE2D0072D4B1 /* VendingSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +183,7 @@
 		AC9C2B2F1594715398365616 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5246169D1DB736180072D4B1 /* VendingSDK.framework */,
+				524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */,
 				CC75F6FDAF134BFD96FC86E3 /* Pods_VendingDemo.framework */,
 			);
 			name = Frameworks;
