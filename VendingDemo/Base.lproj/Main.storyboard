@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6WR-ij-AwM">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cSm-Xq-hxP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,10 +39,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="285" id="qhF-SI-aVR" customClass="VendingCell" customModule="VendingDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="285"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="285"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhF-SI-aVR" id="ihp-NZ-C6z">
-                                            <frame key="frameInset" width="1000" height="285"/>
+                                            <frame key="frameInset" width="375" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vending-1" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-YS-R8D">
@@ -186,21 +187,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-Zu-rMn">
-                                <frame key="frameInset" minX="168" minY="318" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonPressed:" destination="cSm-Xq-hxP" eventType="touchUpInside" id="aM0-1B-D2D"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-3W-4tw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-eb-34D" userLabel="Logo TODO">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="1vC-aJ-nRA"/>
+                                    <constraint firstAttribute="width" secondItem="6qw-eb-34D" secondAttribute="height" multiplier="1:1" id="SIF-rG-bfT"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-Ny-eCE" userLabel="Facebook Login TODO">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="QUH-Lc-AMd"/>
+                                    <constraint firstAttribute="height" constant="75" id="oPF-YR-NS6"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP NAME TODO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-SK-oDL">
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6qw-eb-34D" firstAttribute="top" secondItem="sAb-Wl-eQa" secondAttribute="bottom" constant="48" id="HhU-RU-vXs"/>
+                            <constraint firstItem="Q9w-Ny-eCE" firstAttribute="centerX" secondItem="cYO-zK-1Wr" secondAttribute="centerX" id="Kyo-G8-hNu"/>
+                            <constraint firstItem="Pdi-3W-4tw" firstAttribute="top" secondItem="sAb-Wl-eQa" secondAttribute="bottom" id="Qtb-yX-WYu"/>
+                            <constraint firstAttribute="trailing" secondItem="Pdi-3W-4tw" secondAttribute="trailing" id="dHV-5u-NVv"/>
+                            <constraint firstItem="Pdi-3W-4tw" firstAttribute="leading" secondItem="cYO-zK-1Wr" secondAttribute="leading" id="hyw-Dd-mwI"/>
+                            <constraint firstAttribute="trailing" secondItem="UfM-SK-oDL" secondAttribute="trailing" constant="16" id="iD0-QD-xNg"/>
+                            <constraint firstItem="pnz-CC-rMG" firstAttribute="top" secondItem="Q9w-Ny-eCE" secondAttribute="bottom" constant="122" id="qWt-gU-u4z"/>
+                            <constraint firstItem="pnz-CC-rMG" firstAttribute="top" secondItem="Pdi-3W-4tw" secondAttribute="bottom" id="ssC-J4-4Ax"/>
+                            <constraint firstItem="UfM-SK-oDL" firstAttribute="leading" secondItem="cYO-zK-1Wr" secondAttribute="leading" constant="16" id="uzK-mb-KvJ"/>
+                            <constraint firstItem="UfM-SK-oDL" firstAttribute="top" secondItem="6qw-eb-34D" secondAttribute="bottom" constant="32" id="wL4-mQ-6yF"/>
+                            <constraint firstItem="6qw-eb-34D" firstAttribute="centerX" secondItem="cYO-zK-1Wr" secondAttribute="centerX" id="wjC-Zf-lZb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvi-44-HRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="-634"/>
+            <point key="canvasLocation" x="-290.39999999999998" y="-634.632683658171"/>
         </scene>
         <!--Machine View Controller-->
         <scene sceneID="gy3-3D-e6d">
@@ -741,10 +767,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="92" id="OnR-TZ-tJR" customClass="TitleCell" customModule="VendingDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="92"/>
+                                        <rect key="frame" x="0.0" y="28" width="327" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OnR-TZ-tJR" id="cpg-pO-fjv">
-                                            <frame key="frameInset" width="1000" height="92"/>
+                                            <frame key="frameInset" width="327" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGD 3.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09C-aM-njx">
@@ -782,21 +808,21 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleCell" textLabel="Jhz-SJ-RKl" detailTextLabel="p2M-qD-hWw" rowHeight="44" style="IBUITableViewCellStyleValue1" id="QmF-Ix-QsU">
-                                        <rect key="frame" x="0.0" y="120" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="120" width="327" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QmF-Ix-QsU" id="Ka5-Ak-q9Z">
                                             <frame key="frameInset" width="327" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jhz-SJ-RKl">
-                                                    <frame key="frameInset" minX="15" minY="12" width="33.5" height="20.5"/>
+                                                    <frame key="frameInset" minX="15" minY="12" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p2M-qD-hWw">
-                                                    <frame key="frameInset" minX="268" minY="12" width="44" height="20.5"/>
+                                                    <frame key="frameInset" minX="268" minY="12" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1026,5 +1052,6 @@
         <image name="Pairing" width="121" height="66"/>
         <image name="ReceiptBackground" width="319" height="445"/>
         <image name="Vending-1" width="133" height="172"/>
+        <image name="background" width="1080" height="1920"/>
     </resources>
 </document>
