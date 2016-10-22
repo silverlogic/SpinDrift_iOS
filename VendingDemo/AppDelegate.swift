@@ -64,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private methods
     func configureNavigationBar() {
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 28)]
-        UINavigationBar.appearance().setBackgroundImage(UIColor.squash.uiImage(), for: .default)
+        let backgroundImage:UIImage! = UIImage(named: "navbar.pdf")
+        UINavigationBar.appearance().setBackgroundImage(backgroundImage, for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor.white
     }
