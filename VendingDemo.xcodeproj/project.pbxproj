@@ -61,7 +61,7 @@
 		524616571DB5BF0D0072D4B1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		524616591DB5ED4A0072D4B1 /* StubbedMachines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = StubbedMachines.json; path = Resources/StubbedMachines.json; sourceTree = "<group>"; };
 		524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VendingSDK.framework; sourceTree = "<group>"; };
-		524D2C691D9026D500880018 /* SpinDrift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpinDrift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		524D2C691D9026D500880018 /* TapPharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapPharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524D2C6C1D9026D500880018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524D2C6E1D9026D500880018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		524D2C711D9026D500880018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		63D528D71DBC7CCB00CFC5A4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		63D528D91DBC88FC00CFC5A4 /* ExtendedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedError.h; path = Model/ExtendedError.h; sourceTree = "<group>"; };
 		63D528DA1DBC88FC00CFC5A4 /* ExtendedError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedError.m; path = Model/ExtendedError.m; sourceTree = "<group>"; };
-		63D528DC1DBC919200CFC5A4 /* SpinDrift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpinDrift.entitlements; sourceTree = "<group>"; };
+		63D528DC1DBC919200CFC5A4 /* TapPharmacy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapPharmacy.entitlements; sourceTree = "<group>"; };
 		6F051D6E1DBC698A001E6E82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6F051D701DBC69EA001E6E82 /* ProductSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchViewController.swift; sourceTree = "<group>"; };
 		6F051D781DBC8883001E6E82 /* PairingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PairingViewController.swift; path = ../PairingViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		524D2C601D9026D500880018 = {
 			isa = PBXGroup;
 			children = (
-				63D528DC1DBC919200CFC5A4 /* SpinDrift.entitlements */,
+				63D528DC1DBC919200CFC5A4 /* TapPharmacy.entitlements */,
 				524D2C6B1D9026D500880018 /* VendingDemo */,
 				524D2C6A1D9026D500880018 /* Products */,
 				AC9C2B2F1594715398365616 /* Frameworks */,
@@ -136,7 +136,7 @@
 		524D2C6A1D9026D500880018 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				524D2C691D9026D500880018 /* SpinDrift.app */,
+				524D2C691D9026D500880018 /* TapPharmacy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,9 +245,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		524D2C681D9026D500880018 /* SpinDrift */ = {
+		524D2C681D9026D500880018 /* TapPharmacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 524D2C7B1D9026D500880018 /* Build configuration list for PBXNativeTarget "SpinDrift" */;
+			buildConfigurationList = 524D2C7B1D9026D500880018 /* Build configuration list for PBXNativeTarget "TapPharmacy" */;
 			buildPhases = (
 				C34CCE78DE654217BF975972 /* [CP] Check Pods Manifest.lock */,
 				524D2C651D9026D500880018 /* Sources */,
@@ -263,9 +263,9 @@
 			);
 			dependencies = (
 			);
-			name = SpinDrift;
+			name = TapPharmacy;
 			productName = VendingDemo;
-			productReference = 524D2C691D9026D500880018 /* SpinDrift.app */;
+			productReference = 524D2C691D9026D500880018 /* TapPharmacy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -304,7 +304,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				524D2C681D9026D500880018 /* SpinDrift */,
+				524D2C681D9026D500880018 /* TapPharmacy */,
 			);
 		};
 /* End PBXProject section */
@@ -551,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SpinDrift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TapPharmacy.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4SB3F2S2K3;
@@ -562,7 +562,7 @@
 				INFOPLIST_FILE = VendingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.silverlogic.SpinDrift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silverlogic.TapPharmacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -578,7 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SpinDrift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TapPharmacy.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4SB3F2S2K3;
@@ -589,7 +589,7 @@
 				INFOPLIST_FILE = VendingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.silverlogic.SpinDrift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silverlogic.TapPharmacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VendingDemo/SpinDrift-Bridging-Header.h";
@@ -609,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		524D2C7B1D9026D500880018 /* Build configuration list for PBXNativeTarget "SpinDrift" */ = {
+		524D2C7B1D9026D500880018 /* Build configuration list for PBXNativeTarget "TapPharmacy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524D2C7C1D9026D500880018 /* Debug */,

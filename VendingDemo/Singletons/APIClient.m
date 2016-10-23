@@ -1,6 +1,6 @@
 //
 //  APIClient.m
-//  SpinDrift
+//  TapPharmacy
 //
 //  Created by David Hartmann on 10/22/16.
 //  Copyright © 2016 Muhammad Azeem. All rights reserved.

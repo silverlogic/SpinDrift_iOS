@@ -48,14 +48,14 @@ class PairingViewController: UIViewController {
 
     // MARK: - Private methods
     func connect() {
-//        if let resultType = settings.resultType {
-//            print("Using fake bluetooth")
-//            vendController = VendController(config: resultType)
-//        } else {
+        if let resultType = settings.resultType {
+            print("Using fake bluetooth")
+            vendController = VendController(config: resultType)
+        } else {
             print("Using bluetooth dongle")
         //hardcoded for testing
-            vendController = VendController(deviceModel: "1", deviceSerial: "1018", serviceId: "fff0", maxAmount: Amount(amount: 10.0))
-//        }
+            vendController = VendController(deviceModel: machine.model, deviceSerial: machine.serial, serviceId: machine.serviceId, maxAmount: Amount(amount: 1000.0))
+        }
         
                 vendController.delegate = self
         do {
