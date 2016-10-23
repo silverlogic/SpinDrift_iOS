@@ -41,13 +41,12 @@ class LoginViewController: UIViewController {
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Actions
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (FBSDKAccessToken.current() != nil) {
+            self.performSegue(withIdentifier: "login", sender: self)
+        }
     }
     
     // MARK: - Private methods
@@ -85,19 +84,11 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
         }
         
         APIClient.facebookLogin(withToken: result.token.tokenString, success: { (user: User?) in
-            self.dismiss(animated: true, completion: {
-                //
-            })
+//            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "login", sender: self)
         }) { (error: Error?, response: HTTPURLResponse?) in
             NSLog((error?.localizedDescription)!)
         }
-//        [APIClient facebookLogin:result.token.tokenString success:^(User *user) {
-//            //
-//            [self dismissViewControllerAnimated:YES completion:nil];
-//            //		[self performSegueWithIdentifier:@"addCardSegue" sender:self];
-//            } failure:^(NSError *error, NSHTTPURLResponse *response) {
-//            //
-//            }];
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

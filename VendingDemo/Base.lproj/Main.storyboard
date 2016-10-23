@@ -27,7 +27,7 @@
         <!--Shop-->
         <scene sceneID="T5k-yn-ZdZ">
             <objects>
-                <collectionViewController id="fxc-i9-Cnr" customClass="ProductCollectionViewController" customModule="VendingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="fxc-i9-Cnr" customClass="ProductCollectionViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gmn-4Y-wih" userLabel="Product Collection">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="FRU-2q-cLl" customClass="ProductCell" customModule="VendingDemo" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="FRU-2q-cLl" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="182" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -114,10 +114,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="285" id="qhF-SI-aVR" customClass="VendingCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="285"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="285"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhF-SI-aVR" id="ihp-NZ-C6z">
-                                            <frame key="frameInset" width="375" height="284"/>
+                                            <frame key="frameInset" width="1000" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vending-1" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-YS-R8D">
@@ -293,11 +293,12 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="Q9w-Ny-eCE" id="6Ph-dl-HKp"/>
+                        <segue destination="yz1-bE-1KH" kind="presentation" identifier="login" modalTransitionStyle="flipHorizontal" id="a1T-wq-n3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvi-44-HRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-567" y="-634"/>
+            <point key="canvasLocation" x="-505" y="-862"/>
         </scene>
         <!--Product Search Navigation Controller-->
         <scene sceneID="w1Y-I6-SxH">
@@ -318,7 +319,7 @@
         <!--Product Search View Controller-->
         <scene sceneID="c8s-X2-DmE">
             <objects>
-                <viewController title="Product Search" id="ZXL-ig-k8v" userLabel="Product Search View Controller" customClass="ProductSearchViewController" customModule="VendingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product Search" id="ZXL-ig-k8v" userLabel="Product Search View Controller" customClass="ProductSearchViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ze1-ZO-T4K"/>
                         <viewControllerLayoutGuide type="bottom" id="ZSW-2u-O4b"/>
@@ -340,14 +341,14 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnS-42-guZ" customClass="MachineTableView" customModule="VendingDemo" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnS-42-guZ" customClass="MachineTableView" customModule="SpinDrift" customModuleProvider="target">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VendingMachine" id="amz-sO-VYi" customClass="VendingCell" customModule="VendingDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="132"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VendingMachine" id="amz-sO-VYi" customClass="VendingCell" customModule="SpinDrift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="amz-sO-VYi" id="4GD-bh-5pD">
-                                            <frame key="frameInset" width="375" height="131"/>
+                                            <frame key="frameInset" width="1000" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -685,7 +686,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YXn-lg-7yz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tS5-cU-kJX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bottle" translatesAutoresizingMaskIntoConstraints="NO" id="Wzi-hf-DQY">
@@ -796,7 +797,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xuc-y6-qEa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kDu-9e-Fd6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pairing" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-lj-ILW">
