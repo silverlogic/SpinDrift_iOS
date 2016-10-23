@@ -11,6 +11,8 @@ target 'SpinDrift' do
   pod 'FBSDKCoreKit', '~> 4.16'
   pod 'RestKit', '~> 0.27'
   pod 'YYWebImage', '~> 1.0'
+  pod 'CircularSpinner'
+
   
   
   post_install do |installer|

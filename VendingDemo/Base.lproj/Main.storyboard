@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yz1-bE-1KH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6WR-ij-AwM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -380,7 +380,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZS-rc-H2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317.5999999999999" y="-661.61919040479768"/>
+            <point key="canvasLocation" x="1556" y="-501"/>
+        </scene>
+        <!--Pairing Navigation Controller-->
+        <scene sceneID="1BP-zu-YFs">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="4wF-mQ-Ypj" userLabel="Pairing Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VrG-et-ffe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Z9P-df-jcu" kind="relationship" relationship="rootViewController" id="HRd-7z-Dbf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eto-tb-lEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="-1346"/>
+        </scene>
+        <!--Pairing View Controller-->
+        <scene sceneID="xZ1-7g-Mo4">
+            <objects>
+                <viewController id="Z9P-df-jcu" customClass="PairingViewController" customModule="VendingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eas-c9-J8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="PPe-b5-MhN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gfh-Sy-xjb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-8d-5DK"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-TY-Xea" userLabel="Pairing Status Label">
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j6q-TY-Xea" firstAttribute="centerY" secondItem="Gfh-Sy-xjb" secondAttribute="centerY" id="20K-NJ-5Zk"/>
+                            <constraint firstAttribute="trailing" secondItem="j6q-TY-Xea" secondAttribute="trailing" constant="8" id="74l-Wp-pby"/>
+                            <constraint firstAttribute="trailing" secondItem="yqM-8d-5DK" secondAttribute="trailing" id="Byo-aY-uKa"/>
+                            <constraint firstItem="j6q-TY-Xea" firstAttribute="leading" secondItem="Gfh-Sy-xjb" secondAttribute="leading" constant="8" id="EoV-NZ-Dq6"/>
+                            <constraint firstItem="yqM-8d-5DK" firstAttribute="leading" secondItem="Gfh-Sy-xjb" secondAttribute="leading" id="SSi-kw-1fc"/>
+                            <constraint firstItem="yqM-8d-5DK" firstAttribute="top" secondItem="Gfh-Sy-xjb" secondAttribute="top" id="ZxM-8Q-mcj"/>
+                            <constraint firstItem="PPe-b5-MhN" firstAttribute="top" secondItem="yqM-8d-5DK" secondAttribute="bottom" id="uvB-vU-EDd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sZF-6t-JSW"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="j6q-TY-Xea" id="IZC-Vm-PBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4T-Dk-Q8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="-1346"/>
         </scene>
         <!--Machine View Controller-->
         <scene sceneID="gy3-3D-e6d">
