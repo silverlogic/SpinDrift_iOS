@@ -1,11 +1,12 @@
 PODS:
-  - Alamofire (4.0.0)
+  - Alamofire (4.0.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CircularSpinner (1.1.2)
   - FBSDKCoreKit (4.16.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.16.1):
@@ -17,7 +18,7 @@ PODS:
   - Moya/Core (8.0.0-beta.1):
     - Alamofire (~> 4.0.0)
     - Result
-  - ObjectMapper (2.0.0)
+  - ObjectMapper (2.1.0)
   - RestKit (0.27.0):
     - RestKit/Core (= 0.27.0)
   - RestKit/Core (0.27.0):
@@ -49,6 +50,7 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
+  - CircularSpinner
   - FBSDKCoreKit (~> 4.16)
   - FBSDKLoginKit (~> 4.16)
   - Moya (from `https://github.com/Moya/Moya.git`, tag `8.0.0-beta.1`)
@@ -67,13 +69,14 @@ CHECKOUT OPTIONS:
     :tag: 8.0.0-beta.1
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CircularSpinner: e7ae2fdfcae4e3f3065e62e2e66de3c1837c7663
   FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
   FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
   Moya: 63c4a59d2643c824df8c5a3b3a5f38dc2b48b055
-  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   RestKit: a0244db34e14ed9cf059fcee2be6733cc162c34a
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
@@ -83,6 +86,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 3b29ad468cadb70791f6a2d2150c04ade6175ef4
+PODFILE CHECKSUM: fb7444c1fa1c4acb1c74f69c9634c3ef42c3bb77
 
 COCOAPODS: 1.1.1
