@@ -10,6 +10,7 @@ import UIKit
 import CircularSpinner
 import VendingSDK
 import ObjectMapper
+import YouTubePlayer
 
 
 protocol VendingFlow2 : class {
@@ -23,11 +24,14 @@ class PairingViewController: UIViewController {
     @IBAction func reconnectButton(_ sender: UIButton) {
         connect()
     }
+    @IBOutlet var videoPlayer: YouTubePlayerView!
+    
     weak var delegate: VendingFlow2?
     
     let settings = Settings.sharedInstance
     var vendController: VendController!
     var machine: Machine!
+    
     
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -39,6 +43,7 @@ class PairingViewController: UIViewController {
         super.viewDidLoad()
         statusLabel.isHidden = true
         connect()
+        loadVideo()
     }
 
      override func didReceiveMemoryWarning() {
@@ -48,14 +53,15 @@ class PairingViewController: UIViewController {
 
     // MARK: - Private methods
     func connect() {
-        if let resultType = settings.resultType {
+//        if let resultType = settings.resultType {
             print("Using fake bluetooth")
-            vendController = VendController(config: resultType)
-        } else {
+//            vendController = VendController(config: resultType)
+//            vendController = VendController(config: settings.resultType!)
+//        } else {
             print("Using bluetooth dongle")
         //hardcoded for testing
             vendController = VendController(deviceModel: machine.model, deviceSerial: machine.serial, serviceId: machine.serviceId, maxAmount: Amount(amount: 1000.0))
-        }
+//        }
         
                 vendController.delegate = self
         do {
@@ -106,6 +112,18 @@ extension PairingViewController : VendControllerDelegate {
         CircularSpinner.show("Authorizing", animated: true,  type: .indeterminate, showDismissButton: true)
         CircularSpinner.setValue(0.1, animated: true)
         
+        // charity case
+        if amount.floatValue < 500 {
+            CircularSpinner.hide()
+            playVideo()
+            return
+        }
+        if amount.floatValue == 1200 {
+            CircularSpinner.hide()
+            promptForBirthday()
+            return
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
             CircularSpinner.show("Paying", animated: true,  type: .indeterminate, showDismissButton: true)
             self?.vendController.approveAuth("dummyPayload")
@@ -147,9 +165,49 @@ extension PairingViewController : VendControllerDelegate {
         
         self.vendController.keepAlive()
     }
+    
+    func playVideo(videoURL: URL = URL(string: "https://www.youtube.com/embed/H_Gn6THezTU")!) {
+        videoPlayer.isHidden = false
+        videoPlayer.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.videoPlayer.isHidden = true
+            self.videoPlayer.pause()
+            CircularSpinner.show("Sponsored", animated: true,  type: .indeterminate, showDismissButton: true)
+            self.vendController.approveAuth("dummyPayload")
+        }
+    }
+    
+    func loadVideo(videoId: String = "H_Gn6THezTU") {
+//        DispatchQueue.main.async {
+        videoPlayer.loadVideoID(videoId)
+//    }
+    }
+    
+    func promptForBirthday() {
+        let alert = UIAlertController.init(title: "Verification", message: "Please verify your date of birth", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = "7/8/1991"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
+            let textField = alert.textFields![0] // Force unwrapping because we know it exists.
+            print("Text field: \(textField.text)")
+            CircularSpinner.show("Verified", animated: true,  type: .indeterminate, showDismissButton: true)
+            self.vendController.approveAuth("dummyPayload")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+            CircularSpinner.show("Canceled", animated: true,  type: .indeterminate, showDismissButton: true)
+            self.vendController.disapprove()
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+
+    }
 }
-
-
 
 
 

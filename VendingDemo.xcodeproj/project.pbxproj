@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48AFBF8131A02DBB6E773C78 /* Pods_SpinDrift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED3DBE31467862D83F38E8A /* Pods_SpinDrift.framework */; };
+		10E88FA716C6D8A03E9EF22F /* Pods_TapPharmacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0285F95E3248D9B0279C6995 /* Pods_TapPharmacy.framework */; };
 		524616581DB5BF0D0072D4B1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524616571DB5BF0D0072D4B1 /* SettingsViewController.swift */; };
 		5246165A1DB5ED4A0072D4B1 /* StubbedMachines.json in Resources */ = {isa = PBXBuildFile; fileRef = 524616591DB5ED4A0072D4B1 /* StubbedMachines.json */; };
 		524616A41DB9EE2D0072D4B1 /* VendingSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */; };
@@ -55,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0285F95E3248D9B0279C6995 /* Pods_TapPharmacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapPharmacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04183F0C0A9F387790DFA90F /* Pods-SpinDrift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpinDrift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift.release.xcconfig"; sourceTree = "<group>"; };
 		0ED3DBE31467862D83F38E8A /* Pods_SpinDrift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpinDrift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13334D60E778FFFA3A87B8A8 /* Pods-VendingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VendingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +95,8 @@
 		6F16B13C1DBC2F1D00819892 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		6F16B13E1DBC2F8500819892 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		6FCF16981DBC417B002DBFEA /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		B19F30C72164AE9C0D04A858 /* Pods-TapPharmacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapPharmacy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapPharmacy/Pods-TapPharmacy.debug.xcconfig"; sourceTree = "<group>"; };
+		B3611E4AB090AF3F1D29F01E /* Pods-TapPharmacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapPharmacy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapPharmacy/Pods-TapPharmacy.release.xcconfig"; sourceTree = "<group>"; };
 		C052D9DDE68EBC886522A104 /* Pods-VendingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VendingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA2118D1C4595F457AFDEB2 /* Pods_VendingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA8046F3669EA5A0AE19FFA /* Pods-SpinDrift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpinDrift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +110,7 @@
 				6F051D6F1DBC698A001E6E82 /* MapKit.framework in Frameworks */,
 				524616A41DB9EE2D0072D4B1 /* VendingSDK.framework in Frameworks */,
 				524616A41DB9EE2D0072D4B1 /* VendingSDK.framework in Frameworks */,
-				48AFBF8131A02DBB6E773C78 /* Pods_SpinDrift.framework in Frameworks */,
+				10E88FA716C6D8A03E9EF22F /* Pods_TapPharmacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +230,7 @@
 				524616A31DB9EE2D0072D4B1 /* VendingSDK.framework */,
 				EAA2118D1C4595F457AFDEB2 /* Pods_VendingDemo.framework */,
 				0ED3DBE31467862D83F38E8A /* Pods_SpinDrift.framework */,
+				0285F95E3248D9B0279C6995 /* Pods_TapPharmacy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +242,8 @@
 				13334D60E778FFFA3A87B8A8 /* Pods-VendingDemo.release.xcconfig */,
 				EDA8046F3669EA5A0AE19FFA /* Pods-SpinDrift.debug.xcconfig */,
 				04183F0C0A9F387790DFA90F /* Pods-SpinDrift.release.xcconfig */,
+				B19F30C72164AE9C0D04A858 /* Pods-TapPharmacy.debug.xcconfig */,
+				B3611E4AB090AF3F1D29F01E /* Pods-TapPharmacy.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -256,7 +262,6 @@
 				5246169C1DB7360B0072D4B1 /* Embed Frameworks */,
 				524616981DB728580072D4B1 /* ShellScript */,
 				0C8F60CE052B98DE14639172 /* [CP] Embed Pods Frameworks */,
-				73E9B4DAD7F5B8D24F2D831A /* [CP] Embed Pods Frameworks */,
 				0B840F56F830D401DBC08029 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -336,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapPharmacy/Pods-TapPharmacy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0C8F60CE052B98DE14639172 /* [CP] Embed Pods Frameworks */ = {
@@ -351,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapPharmacy/Pods-TapPharmacy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		524616981DB728580072D4B1 /* ShellScript */ = {
@@ -366,21 +371,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/VendingSDK.framework/strip-frameworks.sh\"";
-		};
-		73E9B4DAD7F5B8D24F2D831A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		C34CCE78DE654217BF975972 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -547,7 +537,7 @@
 		};
 		524D2C7C1D9026D500880018 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDA8046F3669EA5A0AE19FFA /* Pods-SpinDrift.debug.xcconfig */;
+			baseConfigurationReference = B19F30C72164AE9C0D04A858 /* Pods-TapPharmacy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -574,7 +564,7 @@
 		};
 		524D2C7D1D9026D500880018 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04183F0C0A9F387790DFA90F /* Pods-SpinDrift.release.xcconfig */;
+			baseConfigurationReference = B3611E4AB090AF3F1D29F01E /* Pods-TapPharmacy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
