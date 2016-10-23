@@ -66,10 +66,10 @@ class Machine : Mappable {
 }
 
 class MachineAnnotation: NSObject, MKAnnotation {
-    var machine: Machine
+    var machine: Machine!
     let coordinate: CLLocationCoordinate2D
     
-    init(machine: Machine) {
+    init(machine: Machine!) {
         self.machine = machine
         self.coordinate = CLLocationCoordinate2DMake(machine.latitude as CLLocationDegrees, machine.longitude as CLLocationDegrees)
         

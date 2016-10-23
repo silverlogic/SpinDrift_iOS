@@ -15,6 +15,10 @@ let CellIdentifier = "SearchCell"
 let images = [#imageLiteral(resourceName: "Vending-1"), #imageLiteral(resourceName: "Vending-2"), #imageLiteral(resourceName: "Vending-3"), #imageLiteral(resourceName: "Vending-4")]
 let regionRadius: CLLocationDistance = 1000
 
+enum SegueIdentifiers {
+    static let pairingSegue = "pairingSegue"
+}
+
 
 class ProductSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -161,6 +165,31 @@ extension ProductSearchViewController {
 // MARK: - MapKit Data Source
 extension ProductSearchViewController: MKMapViewDelegate {
     
+}
+
+
+// MARK: - IBActions
+extension ProductSearchViewController {
+    @IBAction private func readyPressed(_ sender: AnyObject) {
+        performSegue(withIdentifier: SegueIdentifiers.pairingSegue, sender: self)
+    }
+}
+
+
+// MARK: - Life Cycle
+extension ProductSearchViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        switch identifier {
+        case SegueIdentifiers.pairingSegue:
+            guard let pairingViewController = segue.destination as? PairingViewController else { return }
+            guard let machineAnnotation = mapView.selectedAnnotations.first as? MachineAnnotation else { return }
+            guard let machine = machineAnnotation.machine else { return }
+            pairingViewController.machine = machine
+        default:
+            return
+        }
+    }
 }
 
 
