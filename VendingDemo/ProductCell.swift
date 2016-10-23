@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import YYWebImage
 
 class ProductCell : UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
@@ -16,9 +17,9 @@ class ProductCell : UICollectionViewCell {
 
   //  func configureCell(machine: Machine, image: UIImage) {
         
-    func configureCell() {
-        productNameLabel.text = "test name"
-        productPriceLabel.text = "test price / test units"
-        productImageView.image = UIImage(named:"background")
+    func configureCell(product: Product!) {
+        productNameLabel?.text = product.name
+        productPriceLabel?.text = product.price
+        productImageView.yy_setHighlightedImage(with: product.imageUrl, placeholder:nil)
     }
 }

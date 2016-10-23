@@ -21,7 +21,7 @@ enum SegueIdentifiers {
 
 
 class ProductSearchViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pairingButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -34,6 +34,12 @@ class ProductSearchViewController: UIViewController {
                 let machineAnnotation = MachineAnnotation(machine: machine)
                 mapView.addAnnotation(machineAnnotation)
             }
+        }
+    }
+    
+    var selectedMachine: Machine! {
+        didSet {
+            collectionView.reloadData()
         }
     }
 
@@ -80,7 +86,7 @@ class ProductSearchViewController: UIViewController {
                 } catch {
                     self.showAlert(title: "Nearby machines", message: "Unable to fetch from server")
                 }
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             case let .failure(error):
                 switch error {
                 case .underlying(let nsError):
@@ -164,7 +170,10 @@ extension ProductSearchViewController {
 
 // MARK: - MapKit Data Source
 extension ProductSearchViewController: MKMapViewDelegate {
-    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let machineAnnotation = view.annotation as? MachineAnnotation else { return }
+        selectedMachine = machineAnnotation.machine
+    }
 }
 
 
@@ -193,8 +202,38 @@ extension ProductSearchViewController {
 }
 
 
+// MARK: - CollectionView Data Source
+extension ProductSearchViewController: UICollectionViewDataSource {
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let selectedMachine = selectedMachine else { return 0 }
+        return selectedMachine.products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        
+        // Configure the cell
+        let product = selectedMachine.products[indexPath.row] as Product!
+        cell.configureCell(product: product)
+        return cell
+    }
+
+}
+
+
+// MARK: - CollectionView Delegate
+extension ProductSearchViewController: UICollectionViewDelegate {
+    
+}
+
+
 // MARK: - Cell
-class VendingCell : UITableViewCell {
+class VendingCell: UITableViewCell {
     @IBOutlet weak var machineImageView: UIImageView!
     @IBOutlet weak var machineNameLabel: UILabel!
     @IBOutlet weak var machineDistanceLabel: UILabel!

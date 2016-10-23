@@ -56,7 +56,7 @@ class ProductCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProductCell
     
         // Configure the cell
-        cell.configureCell()
+//        cell.configureCell()
         return cell
     }
 
