@@ -25,14 +25,20 @@
  *
  */
 import UIKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelLogin))
+        
+        loginButton.delegate = self
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,4 +65,42 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: - FB SDK Login Button Delegate
+extension LoginViewController: FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        UIApplication.shared.keyWindow?.endEditing(true);
+        if result == nil {
+            NSLog(String(format:"something failed with error: %@", error.localizedDescription))
+            return
+        }
+        if result.isCancelled {
+            NSLog("Login Canceled");
+            return
+        }
+        if result.token == nil {
+            NSLog("Could not retrieve Facebook authentication.")
+            return
+        }
+        
+        APIClient.facebookLogin(withToken: result.token.tokenString, success: { (user: User?) in
+            self.dismiss(animated: true, completion: {
+                //
+            })
+        }) { (error: Error?, response: HTTPURLResponse?) in
+            NSLog((error?.localizedDescription)!)
+        }
+//        [APIClient facebookLogin:result.token.tokenString success:^(User *user) {
+//            //
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//            //		[self performSegueWithIdentifier:@"addCardSegue" sender:self];
+//            } failure:^(NSError *error, NSHTTPURLResponse *response) {
+//            //
+//            }];
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        // do nothing
+    }
 }

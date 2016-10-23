@@ -1,12 +1,16 @@
 platform :ios, '9.0'
 
-target 'VendingDemo' do
+target 'SpinDrift' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for VendingDemo
   pod 'Moya', git: 'https://github.com/Moya/Moya.git', tag: '8.0.0-beta.1'
   pod 'ObjectMapper', '~> 2.0'
+  pod 'FBSDKLoginKit', '~> 4.16'
+  pod 'FBSDKCoreKit', '~> 4.16'
+  pod 'RestKit', '~> 0.27'
+  pod 'YYWebImage', '~> 1.0'
   
   
   post_install do |installer|

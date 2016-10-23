@@ -1,16 +1,60 @@
 PODS:
   - Alamofire (4.0.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.16.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.16.1):
+    - FBSDKCoreKit
+  - ISO8601DateFormatterValueTransformer (0.6.1):
+    - RKValueTransformers (~> 1.1.0)
   - Moya (8.0.0-beta.1):
     - Moya/Core (= 8.0.0-beta.1)
   - Moya/Core (8.0.0-beta.1):
     - Alamofire (~> 4.0.0)
     - Result
   - ObjectMapper (2.0.0)
+  - RestKit (0.27.0):
+    - RestKit/Core (= 0.27.0)
+  - RestKit/Core (0.27.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.27.0):
+    - RestKit/ObjectMapping
+  - RestKit/Network (0.27.0):
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.27.0):
+    - ISO8601DateFormatterValueTransformer (~> 0.6.1)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.1.0)
+  - RestKit/Support (0.27.0):
+    - TransitionKit (~> 2.2)
   - Result (3.0.0)
+  - RKValueTransformers (1.1.3)
+  - SOCKit (1.1)
+  - TransitionKit (2.2.1)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
+  - FBSDKCoreKit (~> 4.16)
+  - FBSDKLoginKit (~> 4.16)
   - Moya (from `https://github.com/Moya/Moya.git`, tag `8.0.0-beta.1`)
   - ObjectMapper (~> 2.0)
+  - RestKit (~> 0.27)
+  - YYWebImage (~> 1.0)
 
 EXTERNAL SOURCES:
   Moya:
@@ -24,10 +68,21 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
+  FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
+  ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
   Moya: 63c4a59d2643c824df8c5a3b3a5f38dc2b48b055
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  RestKit: a0244db34e14ed9cf059fcee2be6733cc162c34a
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
+  SOCKit: c7376ac262bea9115b8f749358f762522a47d392
+  TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: f2803e7fcb1cd5f4f9adde6f7dc3c84b4664ff84
+PODFILE CHECKSUM: 3b29ad468cadb70791f6a2d2150c04ade6175ef4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
