@@ -255,8 +255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-3W-4tw"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-eb-34D" userLabel="Logo TODO">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-eb-34D" userLabel="Logo TODO">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="1vC-aJ-nRA"/>
                                     <constraint firstAttribute="width" secondItem="6qw-eb-34D" secondAttribute="height" multiplier="1:1" id="SIF-rG-bfT"/>
@@ -268,11 +267,6 @@
                                     <constraint firstAttribute="height" constant="75" id="oPF-YR-NS6"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpinDrift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-SK-oDL">
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -281,11 +275,8 @@
                             <constraint firstItem="Pdi-3W-4tw" firstAttribute="top" secondItem="sAb-Wl-eQa" secondAttribute="bottom" id="Qtb-yX-WYu"/>
                             <constraint firstAttribute="trailing" secondItem="Pdi-3W-4tw" secondAttribute="trailing" id="dHV-5u-NVv"/>
                             <constraint firstItem="Pdi-3W-4tw" firstAttribute="leading" secondItem="cYO-zK-1Wr" secondAttribute="leading" id="hyw-Dd-mwI"/>
-                            <constraint firstAttribute="trailing" secondItem="UfM-SK-oDL" secondAttribute="trailing" constant="16" id="iD0-QD-xNg"/>
                             <constraint firstItem="pnz-CC-rMG" firstAttribute="top" secondItem="Q9w-Ny-eCE" secondAttribute="bottom" constant="122" id="qWt-gU-u4z"/>
                             <constraint firstItem="pnz-CC-rMG" firstAttribute="top" secondItem="Pdi-3W-4tw" secondAttribute="bottom" id="ssC-J4-4Ax"/>
-                            <constraint firstItem="UfM-SK-oDL" firstAttribute="leading" secondItem="cYO-zK-1Wr" secondAttribute="leading" constant="16" id="uzK-mb-KvJ"/>
-                            <constraint firstItem="UfM-SK-oDL" firstAttribute="top" secondItem="6qw-eb-34D" secondAttribute="bottom" constant="32" id="wL4-mQ-6yF"/>
                             <constraint firstItem="6qw-eb-34D" firstAttribute="centerX" secondItem="cYO-zK-1Wr" secondAttribute="centerX" id="wjC-Zf-lZb"/>
                         </constraints>
                     </view>
@@ -345,22 +336,22 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w21-4e-kJC">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="mRg-Ri-LgD"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ef0-Q4-6vy">
-                                    <size key="itemSize" width="242" height="144"/>
+                                    <size key="itemSize" width="258" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="left" reuseIdentifier="ProductCell" id="lmE-wl-fGi" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3" width="242" height="144"/>
+                                        <rect key="frame" x="0.0" y="1" width="258" height="148"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="242" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EN1-Bg-ukB" userLabel="Product Image View">
@@ -1331,5 +1322,6 @@
         <image name="ReceiptBackground" width="319" height="445"/>
         <image name="Vending-1" width="133" height="172"/>
         <image name="background" width="1080" height="1920"/>
+        <image name="logo" width="710" height="736"/>
     </resources>
 </document>

@@ -21,5 +21,6 @@ class ProductCell : UICollectionViewCell {
         productNameLabel?.text = product.name
         productPriceLabel?.text = product.price
         productImageView.yy_setHighlightedImage(with: product.imageUrl, placeholder:nil)
+
     }
 }
