@@ -26,7 +26,7 @@
         <!--Shop-->
         <scene sceneID="T5k-yn-ZdZ">
             <objects>
-                <collectionViewController id="fxc-i9-Cnr" customClass="ProductCollectionViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="fxc-i9-Cnr" customClass="ProductCollectionViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gmn-4Y-wih" userLabel="Product Collection">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="FRU-2q-cLl" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="FRU-2q-cLl" customClass="ProductCell" customModule="TapPharmacy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="182" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -100,7 +100,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -112,11 +112,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="285" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOB-ru-ogM">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="285" id="qhF-SI-aVR" customClass="VendingCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="285"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="285" id="qhF-SI-aVR" customClass="VendingCell" customModule="TapPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="285"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhF-SI-aVR" id="ihp-NZ-C6z">
-                                            <frame key="frameInset" width="375" height="284"/>
+                                            <frame key="frameInset" width="1000" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vending-1" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-YS-R8D">
@@ -245,7 +245,7 @@
         <!--Login View Controller-->
         <scene sceneID="Xrr-wD-hfA">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="cSm-Xq-hxP" customClass="LoginViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="cSm-Xq-hxP" customClass="LoginViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sAb-Wl-eQa"/>
                         <viewControllerLayoutGuide type="bottom" id="pnz-CC-rMG"/>
@@ -308,7 +308,7 @@
         <!--Product Search View Controller-->
         <scene sceneID="c8s-X2-DmE">
             <objects>
-                <viewController title="Product Search" id="ZXL-ig-k8v" userLabel="Product Search View Controller" customClass="ProductSearchViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product Search" id="ZXL-ig-k8v" userLabel="Product Search View Controller" customClass="ProductSearchViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ze1-ZO-T4K"/>
                         <viewControllerLayoutGuide type="bottom" id="ZSW-2u-O4b"/>
@@ -339,22 +339,22 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w21-4e-kJC">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="mRg-Ri-LgD"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ef0-Q4-6vy">
-                                    <size key="itemSize" width="258" height="148"/>
+                                    <size key="itemSize" width="319" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="left" reuseIdentifier="ProductCell" id="lmE-wl-fGi" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="258" height="148"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="lmE-wl-fGi" customClass="ProductCell" customModule="TapPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="319" height="148"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="258" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EN1-Bg-ukB" userLabel="Product Image View">
@@ -362,34 +362,38 @@
                                                         <constraint firstAttribute="width" secondItem="EN1-Bg-ukB" secondAttribute="height" multiplier="1:1" id="jgZ-W1-T6d"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-f4-8ab" userLabel="Product Name Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-f4-8ab" userLabel="Product Name Label">
                                                     <attributedString key="attributedText">
                                                         <fragment content="Product Name">
                                                             <attributes>
-                                                                <font key="NSFont" size="18" name="Avenir-Heavy"/>
+                                                                <font key="NSFont" size="26" name="Avenir-Heavy"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-Yc-Txa">
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" text="Label" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-Yc-Txa">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="v3g-1j-aMi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="EN1-Bg-ukB" secondAttribute="bottom" constant="18" id="1Ry-zp-Uww"/>
                                             <constraint firstAttribute="trailing" secondItem="xqN-Yc-Txa" secondAttribute="trailing" constant="16" id="8hy-uJ-Zaf"/>
                                             <constraint firstAttribute="trailing" secondItem="MFT-f4-8ab" secondAttribute="trailing" constant="16" id="GJD-RK-QZr"/>
                                             <constraint firstItem="EN1-Bg-ukB" firstAttribute="leading" secondItem="lmE-wl-fGi" secondAttribute="leading" constant="16" id="QUh-cY-2jt"/>
-                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="16" id="RNe-6s-EFs"/>
+                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="4" id="RNe-6s-EFs"/>
                                             <constraint firstItem="MFT-f4-8ab" firstAttribute="leading" secondItem="EN1-Bg-ukB" secondAttribute="trailing" constant="16" id="Spr-Ch-awQ"/>
                                             <constraint firstAttribute="bottom" secondItem="xqN-Yc-Txa" secondAttribute="bottom" id="WN8-HH-9a3"/>
                                             <constraint firstItem="xqN-Yc-Txa" firstAttribute="leading" secondItem="EN1-Bg-ukB" secondAttribute="trailing" constant="16" id="ZvC-fl-VvG"/>
-                                            <constraint firstItem="xqN-Yc-Txa" firstAttribute="top" secondItem="MFT-f4-8ab" secondAttribute="bottom" constant="16" id="r2Y-eq-0Xj"/>
+                                            <constraint firstItem="xqN-Yc-Txa" firstAttribute="top" secondItem="MFT-f4-8ab" secondAttribute="bottom" constant="4" id="r2Y-eq-0Xj"/>
                                             <constraint firstItem="EN1-Bg-ukB" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="16" id="s7p-ir-N3Y"/>
                                         </constraints>
                                         <connections>
@@ -438,7 +442,7 @@
         <!--Pairing View Controller-->
         <scene sceneID="xZ1-7g-Mo4">
             <objects>
-                <viewController id="Z9P-df-jcu" customClass="PairingViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z9P-df-jcu" customClass="PairingViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eas-c9-J8f"/>
                         <viewControllerLayoutGuide type="bottom" id="PPe-b5-MhN"/>
@@ -490,7 +494,7 @@
         <!--Machine View Controller-->
         <scene sceneID="gy3-3D-e6d">
             <objects>
-                <viewController id="gN0-Rz-b5Y" customClass="MachineViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gN0-Rz-b5Y" customClass="MachineViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BiN-BS-yHp"/>
                         <viewControllerLayoutGuide type="bottom" id="TvH-zL-3aY"/>
@@ -662,7 +666,7 @@
         <!--Settings View Controller-->
         <scene sceneID="SXk-sf-z80">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="1cN-dT-d97" customClass="SettingsViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="1cN-dT-d97" customClass="SettingsViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lIB-M5-Xnu"/>
                         <viewControllerLayoutGuide type="bottom" id="eHl-Ul-HYT"/>
@@ -795,7 +799,7 @@
         <!--Machine Info View Controller-->
         <scene sceneID="Jb6-u4-rQO">
             <objects>
-                <viewController storyboardIdentifier="MachineInfoViewController" id="A7S-4G-gp6" customClass="MachineInfoViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MachineInfoViewController" id="A7S-4G-gp6" customClass="MachineInfoViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A4d-D8-vbU"/>
                         <viewControllerLayoutGuide type="bottom" id="YXn-lg-7yz"/>
@@ -906,7 +910,7 @@
         <!--Vending View Controller-->
         <scene sceneID="haT-IM-9AZ">
             <objects>
-                <viewController storyboardIdentifier="VendingViewController" id="aTq-Ww-SDB" customClass="VendingViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VendingViewController" id="aTq-Ww-SDB" customClass="VendingViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n4n-Wb-C9i"/>
                         <viewControllerLayoutGuide type="bottom" id="Xuc-y6-qEa"/>
@@ -926,7 +930,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbW-Gx-Or6" userLabel="Page Control" customClass="PageControl" customModule="SpinDrift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbW-Gx-Or6" userLabel="Page Control" customClass="PageControl" customModule="TapPharmacy" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="2kE-51-47V"/>
@@ -1017,7 +1021,7 @@
         <!--Receipt View Controller-->
         <scene sceneID="w7v-zQ-L0n">
             <objects>
-                <viewController storyboardIdentifier="ReceiptViewController" id="VfL-Ah-Pkt" customClass="ReceiptViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReceiptViewController" id="VfL-Ah-Pkt" customClass="ReceiptViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iKm-GY-QZG"/>
                         <viewControllerLayoutGuide type="bottom" id="CPc-wb-462"/>
@@ -1034,11 +1038,11 @@
                                     <constraint firstAttribute="height" priority="750" constant="400" id="kBx-Eb-gyM"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="92" id="OnR-TZ-tJR" customClass="TitleCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="327" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="92" id="OnR-TZ-tJR" customClass="TitleCell" customModule="TapPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OnR-TZ-tJR" id="cpg-pO-fjv">
-                                            <frame key="frameInset" width="327" height="92"/>
+                                            <frame key="frameInset" width="1000" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGD 3.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09C-aM-njx">
@@ -1076,21 +1080,21 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="simpleCell" textLabel="Jhz-SJ-RKl" detailTextLabel="p2M-qD-hWw" rowHeight="44" style="IBUITableViewCellStyleValue1" id="QmF-Ix-QsU">
-                                        <rect key="frame" x="0.0" y="120" width="327" height="44"/>
+                                        <rect key="frame" x="0.0" y="120" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QmF-Ix-QsU" id="Ka5-Ak-q9Z">
-                                            <frame key="frameInset" width="327" height="44"/>
+                                            <frame key="frameInset" width="1000" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jhz-SJ-RKl">
-                                                    <frame key="frameInset" minX="15" minY="12" width="34" height="21"/>
+                                                    <frame key="frameInset" minX="164" minY="12" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p2M-qD-hWw">
-                                                    <frame key="frameInset" minX="268" minY="12" width="44" height="21"/>
+                                                    <frame key="frameInset" minX="792" minY="12" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1150,7 +1154,7 @@
         <!--Vending View Controller-->
         <scene sceneID="apz-h1-vIq">
             <objects>
-                <viewController id="PfG-6z-VZ0" customClass="VendingViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PfG-6z-VZ0" customClass="VendingViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I0o-gL-LSc"/>
                         <viewControllerLayoutGuide type="bottom" id="8hq-LG-oRr"/>
@@ -1251,7 +1255,7 @@
         <!--Machine View Controller-->
         <scene sceneID="RCL-gh-KEs">
             <objects>
-                <viewController id="0fS-rd-alH" customClass="MachineViewController" customModule="SpinDrift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0fS-rd-alH" customClass="MachineViewController" customModule="TapPharmacy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oOo-VM-0wS"/>
                         <viewControllerLayoutGuide type="bottom" id="h5x-mO-vAA"/>
