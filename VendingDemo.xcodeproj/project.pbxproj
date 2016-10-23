@@ -29,14 +29,14 @@
 		529C9C9D1D9A439300B01CB7 /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C9C9C1D9A439300B01CB7 /* ReceiptViewController.swift */; };
 		529C9CA11D9B794C00B01CB7 /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C9CA01D9B794B00B01CB7 /* Approval.swift */; };
 		5BF5C52204E94B5BC64AE07A /* Pods_VendingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC75F6FDAF134BFD96FC86E3 /* Pods_VendingDemo.framework */; };
+		63D528D51DBC777A00CFC5A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528D41DBC777A00CFC5A4 /* APIClient.m */; };
+		63D528D81DBC7CCB00CFC5A4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528D71DBC7CCB00CFC5A4 /* User.m */; };
+		63D528DB1DBC88FC00CFC5A4 /* ExtendedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528DA1DBC88FC00CFC5A4 /* ExtendedError.m */; };
 		6F051D6F1DBC698A001E6E82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F051D6E1DBC698A001E6E82 /* MapKit.framework */; };
 		6F051D711DBC69EA001E6E82 /* ProductSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F051D701DBC69EA001E6E82 /* ProductSearchViewController.swift */; };
 		6F16B13D1DBC2F1D00819892 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B13C1DBC2F1D00819892 /* ProductCell.swift */; };
 		6F16B13F1DBC2F8500819892 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B13E1DBC2F8500819892 /* Product.swift */; };
 		6FCF16991DBC417B002DBFEA /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF16981DBC417B002DBFEA /* ProductCollectionViewController.swift */; };
-		63D528D51DBC777A00CFC5A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528D41DBC777A00CFC5A4 /* APIClient.m */; };
-		63D528D81DBC7CCB00CFC5A4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528D71DBC7CCB00CFC5A4 /* User.m */; };
-		63D528DB1DBC88FC00CFC5A4 /* ExtendedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D528DA1DBC88FC00CFC5A4 /* ExtendedError.m */; };
 		870D06CE49447C9244119375 /* Pods_VendingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA2118D1C4595F457AFDEB2 /* Pods_VendingDemo.framework */; };
 		B4F32395E5C4B55675CD35A0 /* Pods_SpinDrift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED3DBE31467862D83F38E8A /* Pods_SpinDrift.framework */; };
 /* End PBXBuildFile section */
@@ -81,13 +81,6 @@
 		529C9C9A1D9A3E0500B01CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		529C9C9C1D9A439300B01CB7 /* ReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReceiptViewController.swift; path = Vending/ReceiptViewController.swift; sourceTree = "<group>"; };
 		529C9CA01D9B794B00B01CB7 /* Approval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Approval.swift; path = Model/Approval.swift; sourceTree = "<group>"; };
-		6F051D6E1DBC698A001E6E82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		6F051D701DBC69EA001E6E82 /* ProductSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchViewController.swift; sourceTree = "<group>"; };
-		6F16B13C1DBC2F1D00819892 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		6F16B13E1DBC2F8500819892 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		6FCF16981DBC417B002DBFEA /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
-		75AA63E37AB53A737AF804C6 /* Pods-VendingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VendingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		CC75F6FDAF134BFD96FC86E3 /* Pods_VendingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D528D21DBC777900CFC5A4 /* SpinDrift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpinDrift-Bridging-Header.h"; sourceTree = "<group>"; };
 		63D528D31DBC777A00CFC5A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIClient.h; path = Singletons/APIClient.h; sourceTree = "<group>"; };
 		63D528D41DBC777A00CFC5A4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIClient.m; path = Singletons/APIClient.m; sourceTree = "<group>"; };
@@ -96,7 +89,13 @@
 		63D528D91DBC88FC00CFC5A4 /* ExtendedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedError.h; path = Model/ExtendedError.h; sourceTree = "<group>"; };
 		63D528DA1DBC88FC00CFC5A4 /* ExtendedError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedError.m; path = Model/ExtendedError.m; sourceTree = "<group>"; };
 		63D528DC1DBC919200CFC5A4 /* SpinDrift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpinDrift.entitlements; sourceTree = "<group>"; };
+		6F051D6E1DBC698A001E6E82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6F051D701DBC69EA001E6E82 /* ProductSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchViewController.swift; sourceTree = "<group>"; };
+		6F16B13C1DBC2F1D00819892 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		6F16B13E1DBC2F8500819892 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6FCF16981DBC417B002DBFEA /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
 		C052D9DDE68EBC886522A104 /* Pods-VendingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VendingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CC75F6FDAF134BFD96FC86E3 /* Pods_VendingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA2118D1C4595F457AFDEB2 /* Pods_VendingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA8046F3669EA5A0AE19FFA /* Pods-SpinDrift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpinDrift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,7 +256,7 @@
 				524D2C671D9026D500880018 /* Resources */,
 				5246169C1DB7360B0072D4B1 /* Embed Frameworks */,
 				524616981DB728580072D4B1 /* ShellScript */,
-				0C8F60CE052B98DE14639172 /* Embed Pods Frameworks */,
+				0C8F60CE052B98DE14639172 /* [CP] Embed Pods Frameworks */,
 				73E9B4DAD7F5B8D24F2D831A /* [CP] Embed Pods Frameworks */,
 				0B840F56F830D401DBC08029 /* [CP] Copy Pods Resources */,
 			);
@@ -326,21 +325,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C8F60CE052B98DE14639172 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VendingDemo/Pods-VendingDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0B840F56F830D401DBC08029 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +338,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C8F60CE052B98DE14639172 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpinDrift/Pods-SpinDrift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		524616981DB728580072D4B1 /* ShellScript */ = {
