@@ -13,6 +13,7 @@ class Product : Mappable {
     var product_identifier: String!
     var name: String!
     var price: String!
+    var imageUrl: NSURL!
     
     required init?(map: Map) {
         
@@ -22,5 +23,6 @@ class Product : Mappable {
         product_identifier <- map["product_identifier"]
         name <- map["name"]
         price <- map["price"]
+        imageUrl <- map["icon.full_size"]
     }
 }
