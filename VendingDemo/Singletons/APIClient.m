@@ -31,6 +31,7 @@ static NSString *const kPage		= @"page";
 // Endpoints
 static NSString *const kFacebookEndpoint = @"social-auth";
 static NSString *const kMeEndpoint = @"users/me";
+static NSString *const kVendingMachines = @"vending-machines";
 
 typedef NS_ENUM(NSUInteger, PageSize) {
     PageSizeDefault  = 20,

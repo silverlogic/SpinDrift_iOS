@@ -7,22 +7,43 @@
 //
 
 import UIKit
+import Moya
 import CoreLocation
+import MapKit
 
 let CellIdentifier = "SearchCell"
 let images = [#imageLiteral(resourceName: "Vending-1"), #imageLiteral(resourceName: "Vending-2"), #imageLiteral(resourceName: "Vending-3"), #imageLiteral(resourceName: "Vending-4")]
+let regionRadius: CLLocationDistance = 1000
 
 
 class ProductSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pairingButton: UIButton!
-//    @IBOutlet weak var vendingMap: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation?
+    
+    var nearbyMachines = [Machine]() {
+        didSet {
+            for machine in nearbyMachines {
+                let machineAnnotation = MachineAnnotation(machine: machine)
+                mapView.addAnnotation(machineAnnotation)
+            }
+        }
+    }
+
+    var nearbyMachineRequest: Cancellable?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +51,119 @@ class ProductSearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func fetchNearbyMachines(force: Bool = false) {
+        guard let currentLocation = currentLocation else {
+            return
+        }
 
+        if let request = nearbyMachineRequest, request.cancelled {
+            if force {
+                request.cancel()
+            } else {
+                return
+            }
+        }
+
+        let latitude = Float(currentLocation.coordinate.latitude)
+        let longitude = Float(currentLocation.coordinate.longitude)
+
+        nearbyMachineRequest = UnattendedRetailProvider.request(.nearbyMachines(latitude: Float(latitude), longitude: Float(longitude))) { [unowned self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    print(response)
+                    self.nearbyMachines = try response.mapArray(type: Machine.self)
+                } catch {
+                    self.showAlert(title: "Nearby machines", message: "Unable to fetch from server")
+                }
+                self.tableView.reloadData()
+            case let .failure(error):
+                switch error {
+                case .underlying(let nsError):
+                    self.showAlert(title: "Nearby machines", message: nsError.localizedDescription)
+                    break
+                default:
+                    guard let error = error as? CustomStringConvertible else {
+                        return
+                    }
+                    self.showAlert(title: "Nearby machines", message: error.description)
+                }
+            }
+        }
+    }
+    
+    func refresh() {
+//        if Settings.sharedInstance.useMobileLocation {
+            locationManager.requestLocation()
+//        } else {
+//            locationManager(locationManager, didUpdateLocations: [Settings.sharedInstance.stubbedLocation])
+//        }
+    }
+
+    func showAlert(title: String, message: String) {
+        let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+
+        present(vc, animated: true, completion: nil)
+    }
 }
+
+// MARK: - Core location methods
+extension ProductSearchViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse:
+            refresh()
+        case .denied, .restricted:
+            let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName")
+            showAlert(title: "Location Error!", message: "Location permission is required to find nearby machines. Go to 'Settings -> \(appName) -> Location' and select 'While Using the App'")
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        default:
+            break
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
+        }
+
+        currentLocation = location
+        centerMapOnLocation(location: currentLocation!)
+        fetchNearbyMachines()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Swift.Error) {
+        print("Location manager failed with error: \(error)")
+        showAlert(title: "Location Error!", message: "Cannot determine your location. Please try again.")
+//        hideLoadingView()
+    }
+}
+
+
+// MARK: - MapKit Helpers
+extension ProductSearchViewController {
+    func centerMapOnLocation(location: CLLocation) {
+        guard let mapView = mapView else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.centerMapOnLocation(location: location)
+            }
+            return
+        }
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            mapView.setRegion(coordinateRegion, animated: true)
+        }
+    }
+}
+
+// MARK: - MapKit Data Source
+extension ProductSearchViewController: MKMapViewDelegate {
+    
+}
+
+
 // MARK: - Cell
 class VendingCell : UITableViewCell {
     @IBOutlet weak var machineImageView: UIImageView!

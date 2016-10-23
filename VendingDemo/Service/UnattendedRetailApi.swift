@@ -72,11 +72,11 @@ enum UnattendedRetail {
 }
 
 extension UnattendedRetail: TargetType {
-    public var baseURL: URL { return URL(string: Bundle.main.object(forInfoDictionaryKey: "VendingServerURL") as! String)! }
+    public var baseURL: URL { return URL(string: Bundle.main.object(forInfoDictionaryKey: "APIURL") as! String)! }
     public var path: String {
         switch self {
         case .nearbyMachines(_, _):
-            return "/machines"
+            return "/vending-machines"
         }
     }
     public var method: Moya.Method {
@@ -85,7 +85,7 @@ extension UnattendedRetail: TargetType {
     public var parameters: [String: Any]? {
         switch self {
         case .nearbyMachines(let latitude, let longitude):
-            return ["latitude": latitude, "longitude": longitude]
+            return ["lat": latitude, "long": longitude]
         }
     }
     public var task: Task {

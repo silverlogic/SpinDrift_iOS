@@ -26,6 +26,7 @@
  */
 import Foundation
 import ObjectMapper
+import MapKit
 
 class Machine : Mappable {
     var name: String!
@@ -34,11 +35,12 @@ class Machine : Mappable {
     var model: String!
     var serial: String!
     var serviceId: String!
-    var latitude: Float!
-    var longitude: Float!
+    var latitude: CLLocationDegrees!
+    var longitude: CLLocationDegrees!
     var address: String!
+    var products: [Product]!
     
-    let transform = TransformOf<Float, String>(fromJSON: { Float($0!) }, toJSON: { $0.map { String($0) } })
+    let transform = TransformOf<CLLocationDegrees, String>(fromJSON: { CLLocationDegrees($0!) }, toJSON: { $0.map { String($0) } })
     
     required init?(map: Map) {
         
@@ -55,9 +57,29 @@ class Machine : Mappable {
         latitude <- (map["latitude"], transform)
         longitude <- (map["longitude"], transform)
         address <- map["address"]
+        products <- map["products"]
     }
     
     func formatDistance() -> String {
         return distance < 1000 ? "\(distance!)m" : "\(distance! / 1000)km"
+    }
+}
+
+class MachineAnnotation: NSObject, MKAnnotation {
+    var machine: Machine
+    let coordinate: CLLocationCoordinate2D
+    
+    init(machine: Machine) {
+        self.machine = machine
+        self.coordinate = CLLocationCoordinate2DMake(machine.latitude as CLLocationDegrees, machine.longitude as CLLocationDegrees)
+        
+        super.init()
+    }
+    
+    var title: String? {
+        return machine.name
+    }
+    var subtitle: String? {
+        return machine.address
     }
 }
