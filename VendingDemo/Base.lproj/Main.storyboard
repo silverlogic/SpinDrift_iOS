@@ -4,7 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -334,67 +333,69 @@
                                     <constraint firstAttribute="height" constant="64" id="sSr-oG-W6u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
-                                <state key="normal" title="Ready to Pair" backgroundImage="background">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
+                                <state key="normal" title="Ready to Pair" backgroundImage="background"/>
                                 <connections>
                                     <action selector="readyPressed:" destination="ZXL-ig-k8v" eventType="touchUpInside" id="a5x-c0-sgr"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w21-4e-kJC">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="mRg-Ri-LgD"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ef0-Q4-6vy">
-                                    <size key="itemSize" width="156" height="148"/>
+                                    <size key="itemSize" width="258" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" reuseIdentifier="ProductCell" id="lmE-wl-fGi" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="156" height="148"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="left" reuseIdentifier="ProductCell" id="lmE-wl-fGi" customClass="ProductCell" customModule="SpinDrift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="258" height="148"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="156" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EN1-Bg-ukB" userLabel="Product Image View"/>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-f4-8ab" userLabel="Product Name Label">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EN1-Bg-ukB" userLabel="Product Image View">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="EN1-Bg-ukB" secondAttribute="height" multiplier="1:1" id="jgZ-W1-T6d"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-f4-8ab" userLabel="Product Name Label">
                                                     <attributedString key="attributedText">
                                                         <fragment content="Product Name">
                                                             <attributes>
-                                                                <font key="NSFont" size="17" name="Avenir-Heavy"/>
+                                                                <font key="NSFont" size="18" name="Avenir-Heavy"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-3w-M3T" userLabel="Product Price Label">
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-Yc-Txa">
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="top" secondItem="EN1-Bg-ukB" secondAttribute="bottom" constant="8" id="0WC-P8-fnO"/>
-                                            <constraint firstItem="QAf-3w-M3T" firstAttribute="top" secondItem="MFT-f4-8ab" secondAttribute="bottom" constant="4" id="75q-1P-3Jf"/>
-                                            <constraint firstAttribute="trailing" secondItem="QAf-3w-M3T" secondAttribute="trailing" constant="16" id="BcO-hA-VNU"/>
-                                            <constraint firstItem="QAf-3w-M3T" firstAttribute="leading" secondItem="lmE-wl-fGi" secondAttribute="leading" constant="16" id="IWb-kG-1P1"/>
-                                            <constraint firstAttribute="trailing" secondItem="MFT-f4-8ab" secondAttribute="trailing" constant="16" id="Md8-M1-0EY"/>
-                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="leading" secondItem="lmE-wl-fGi" secondAttribute="leading" constant="16" id="U5B-EC-5JT"/>
-                                            <constraint firstAttribute="trailing" secondItem="EN1-Bg-ukB" secondAttribute="trailing" constant="8" id="b6D-Lz-ff2"/>
-                                            <constraint firstItem="EN1-Bg-ukB" firstAttribute="leading" secondItem="lmE-wl-fGi" secondAttribute="leading" constant="8" id="ckC-Ct-GXF"/>
-                                            <constraint firstItem="EN1-Bg-ukB" firstAttribute="height" secondItem="lmE-wl-fGi" secondAttribute="height" multiplier="1:2" id="hnc-BQ-bsk"/>
-                                            <constraint firstItem="EN1-Bg-ukB" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="8" id="s7p-ir-N3Y"/>
-                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="top" secondItem="EN1-Bg-ukB" secondAttribute="bottom" constant="8" id="tfi-9R-rJW"/>
+                                            <constraint firstAttribute="bottom" secondItem="EN1-Bg-ukB" secondAttribute="bottom" constant="18" id="1Ry-zp-Uww"/>
+                                            <constraint firstAttribute="trailing" secondItem="xqN-Yc-Txa" secondAttribute="trailing" constant="16" id="8hy-uJ-Zaf"/>
+                                            <constraint firstAttribute="trailing" secondItem="MFT-f4-8ab" secondAttribute="trailing" constant="16" id="GJD-RK-QZr"/>
+                                            <constraint firstItem="EN1-Bg-ukB" firstAttribute="leading" secondItem="lmE-wl-fGi" secondAttribute="leading" constant="16" id="QUh-cY-2jt"/>
+                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="16" id="RNe-6s-EFs"/>
+                                            <constraint firstItem="MFT-f4-8ab" firstAttribute="leading" secondItem="EN1-Bg-ukB" secondAttribute="trailing" constant="16" id="Spr-Ch-awQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="xqN-Yc-Txa" secondAttribute="bottom" id="WN8-HH-9a3"/>
+                                            <constraint firstItem="xqN-Yc-Txa" firstAttribute="leading" secondItem="EN1-Bg-ukB" secondAttribute="trailing" constant="16" id="ZvC-fl-VvG"/>
+                                            <constraint firstItem="xqN-Yc-Txa" firstAttribute="top" secondItem="MFT-f4-8ab" secondAttribute="bottom" constant="16" id="r2Y-eq-0Xj"/>
+                                            <constraint firstItem="EN1-Bg-ukB" firstAttribute="top" secondItem="lmE-wl-fGi" secondAttribute="top" constant="16" id="s7p-ir-N3Y"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="productImageView" destination="EN1-Bg-ukB" id="E2h-fx-EMa"/>
                                             <outlet property="productNameLabel" destination="MFT-f4-8ab" id="KTj-Bo-xzE"/>
-                                            <outlet property="productPriceLabel" destination="QAf-3w-M3T" id="GTV-9P-eKL"/>
+                                            <outlet property="productPriceLabel" destination="xqN-Yc-Txa" id="dB7-Ao-CKM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

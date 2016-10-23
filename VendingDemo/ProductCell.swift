@@ -20,6 +20,7 @@ class ProductCell : UICollectionViewCell {
     func configureCell(product: Product!) {
         productNameLabel?.text = product.name
         productPriceLabel?.text = product.price
-//        productImageView.yy_setImage(with: product.imageUrl, placeholder: #imageliteral(#imageLiteral(resourceName: "Bottle"))
+        productImageView.yy_setHighlightedImage(with: product.imageUrl, placeholder:nil)
+
     }
 }
