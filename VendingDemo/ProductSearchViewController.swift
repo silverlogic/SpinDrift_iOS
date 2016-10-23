@@ -24,12 +24,14 @@ class ProductSearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pairingButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation?
     
     var nearbyMachines = [Machine]() {
         didSet {
+            mapView.removeAnnotations(mapView.annotations)
             for machine in nearbyMachines {
                 let machineAnnotation = MachineAnnotation(machine: machine)
                 mapView.addAnnotation(machineAnnotation)
@@ -61,7 +63,7 @@ class ProductSearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func fetchNearbyMachines(force: Bool = false) {
+    func fetchNearbyMachines(query: String = "", force: Bool = false) {
         guard let currentLocation = currentLocation else {
             return
         }
@@ -77,7 +79,7 @@ class ProductSearchViewController: UIViewController {
         let latitude = Float(currentLocation.coordinate.latitude)
         let longitude = Float(currentLocation.coordinate.longitude)
 
-        nearbyMachineRequest = UnattendedRetailProvider.request(.nearbyMachines(latitude: Float(latitude), longitude: Float(longitude))) { [unowned self] result in
+        nearbyMachineRequest = UnattendedRetailProvider.request(.nearbyMachines(latitude: Float(latitude), longitude: Float(longitude), query: query)) { [unowned self] result in
             switch result {
             case let .success(response):
                 do {
@@ -86,7 +88,6 @@ class ProductSearchViewController: UIViewController {
                 } catch {
                     self.showAlert(title: "Nearby machines", message: "Unable to fetch from server")
                 }
-                self.collectionView.reloadData()
             case let .failure(error):
                 switch error {
                 case .underlying(let nsError):
@@ -231,6 +232,25 @@ extension ProductSearchViewController: UICollectionViewDelegate {
     
 }
 
+
+// MARK: - Search Bar Delegate
+extension ProductSearchViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if searchBar.text?.characters.count == 0 {
+            fetchNearbyMachines()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let query = searchBar.text else {
+            fetchNearbyMachines()
+            return
+        }
+        fetchNearbyMachines(query: query)
+    }
+}
 
 // MARK: - Cell
 class VendingCell: UITableViewCell {

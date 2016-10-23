@@ -323,8 +323,11 @@
                                     <outlet property="delegate" destination="ZXL-ig-k8v" id="hKt-pq-IdP"/>
                                 </connections>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="u6G-7h-X79">
-                                <textInputTraits key="textInputTraits"/>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6G-7h-X79">
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZXL-ig-k8v" id="JZK-B0-Lly"/>
+                                </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-EY-lfz" userLabel="Pairing Button">
                                 <constraints>
@@ -423,6 +426,7 @@
                         <outlet property="collectionView" destination="w21-4e-kJC" id="U8P-n3-M65"/>
                         <outlet property="mapView" destination="lWt-l9-MOR" id="0cb-Rj-yzb"/>
                         <outlet property="pairingButton" destination="wCO-EY-lfz" id="pWU-hp-dgz"/>
+                        <outlet property="searchBar" destination="u6G-7h-X79" id="FtX-Hu-MUq"/>
                         <segue destination="Z9P-df-jcu" kind="show" identifier="pairingSegue" id="YUc-DS-gIj"/>
                     </connections>
                 </viewController>

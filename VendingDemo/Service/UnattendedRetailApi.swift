@@ -68,14 +68,14 @@ public func url(_ route: TargetType) -> String {
 }
 
 enum UnattendedRetail {
-    case nearbyMachines(latitude: Float, longitude: Float)
+    case nearbyMachines(latitude: Float, longitude: Float, query: String)
 }
 
 extension UnattendedRetail: TargetType {
     public var baseURL: URL { return URL(string: Bundle.main.object(forInfoDictionaryKey: "APIURL") as! String)! }
     public var path: String {
         switch self {
-        case .nearbyMachines(_, _):
+        case .nearbyMachines(_, _, _):
             return "/vending-machines"
         }
     }
@@ -84,8 +84,8 @@ extension UnattendedRetail: TargetType {
     }
     public var parameters: [String: Any]? {
         switch self {
-        case .nearbyMachines(let latitude, let longitude):
-            return ["lat": latitude, "long": longitude]
+        case .nearbyMachines(let latitude, let longitude, let query):
+            return ["lat": latitude, "long": longitude, "q": query]
         }
     }
     public var task: Task {
@@ -93,7 +93,7 @@ extension UnattendedRetail: TargetType {
     }
     public var sampleData: Data {
         switch self {
-        case .nearbyMachines(_, _):
+        case .nearbyMachines(_, _, _):
             if let path = Bundle.main.path(forResource: "StubbedMachines", ofType: "json"),
                 let data = NSData(contentsOfFile: path) as? Data {
                 return data
