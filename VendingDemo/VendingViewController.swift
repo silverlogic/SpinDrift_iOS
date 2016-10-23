@@ -88,7 +88,7 @@ class VendingViewController : UIViewController {
             vendController = VendController(deviceModel: machine.model, deviceSerial: machine.serial, serviceId: machine.serviceId, maxAmount: Amount(amount: 1.0))
         }
         
-        vendController.delegate = self
+//        vendController.delegate = self
         do {
             try vendController.connect()
             self.imageView.image = #imageLiteral(resourceName: "Pairing")
@@ -141,88 +141,88 @@ class VendingViewController : UIViewController {
     }
 }
 
-extension VendingViewController : VendControllerDelegate {
-    func connected() {
-        print("Connected")
-        self.imageView.image = #imageLiteral(resourceName: "MakeSelection")
-        self.pageControl.currentPage = 1
-        self.textLabel.text = NSLocalizedString("Pick the item you want in vending machine by pressing its number", comment: "")
-        self.countdownLabel.text = "\(countdownTime)"
-        
-        self.countdownView.isHidden = false
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdownTick), userInfo: nil, repeats: true)
-    }
-    
-    func disconnected(_ error: VendError) {
-        print("Connection disconnected: \(error)")
-        
-        cancelCountdown()
-        
-        switch error {
-        case .connectionTimedOut:
-            showError(error: "Timeout!")
-        case .invalidDeviceResponse:
-            // TODO: Show different UI
-            fallthrough
-        case .bluetoothNotAvailable:
-            // TODO: Show different UI
-            fallthrough
-        default:
-            showError(error: NSLocalizedString("Pairing failed", comment: ""))
-        }
-        
-        self.vendController.delegate = nil
-        self.vendController = nil
-    }
-    
-    func authRequest(_ amount: NSNumber, token: String?) {
-        print("Auth requested")
-        
-        cancelCountdown()
-        
-        self.imageView.image = #imageLiteral(resourceName: "Authorizing")
-        self.pageControl.currentPage = 2
-        self.textLabel.text = NSLocalizedString("Authorizing your payment Info...", comment: "")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
-            self?.vendController.approveAuth("dummyPayload")
-            
-            self?.imageView.image = #imageLiteral(resourceName: "Approving")
-            self?.pageControl.currentPage = 3
-            self?.textLabel.text = NSLocalizedString("Placing the payment...\n\n$ \(amount)", comment: "")
-        }
-    }
-    
-    func processStarted() {
-        print("Process started")
-    }
-    
-    func processCompleted(_ finalAmount: NSNumber, processStatus: ProcessStatus, completedPayload: String) {
-        print("Process completed")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
-            if processStatus == .success {
-                // Show receipt
-                let amount = String(format: "%0.2f", finalAmount.floatValue)
-                self?.delegate?.showReceipt(machineName: self?.machine.name ?? "", quantity: 1, amount: "USD \(amount)", cardMaskedPan: "**** 4567")
-                
-                self?.delegate?.flowComplete()
-            } else {
-                self?.showError(error: "Vending failed")
-            }
-        }
-    }
-    
-    func invalidProduct() {
-        print("Invalid product requested")
-    }
-    
-    func timeoutWarning() {
-        print("Timeout warning")
-        
-        self.vendController.keepAlive()
-    }
-}
+//extension VendingViewController : VendControllerDelegate {
+//    func connected() {
+//        print("Connected")
+//        self.imageView.image = #imageLiteral(resourceName: "MakeSelection")
+//        self.pageControl.currentPage = 1
+//        self.textLabel.text = NSLocalizedString("Pick the item you want in vending machine by pressing its number", comment: "")
+//        self.countdownLabel.text = "\(countdownTime)"
+//        
+//        self.countdownView.isHidden = false
+//        countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdownTick), userInfo: nil, repeats: true)
+//    }
+//    
+//    func disconnected(_ error: VendError) {
+//        print("Connection disconnected: \(error)")
+//        
+//        cancelCountdown()
+//        
+//        switch error {
+//        case .connectionTimedOut:
+//            showError(error: "Timeout!")
+//        case .invalidDeviceResponse:
+//            // TODO: Show different UI
+//            fallthrough
+//        case .bluetoothNotAvailable:
+//            // TODO: Show different UI
+//            fallthrough
+//        default:
+//            showError(error: NSLocalizedString("Pairing failed", comment: ""))
+//        }
+//        
+//        self.vendController.delegate = nil
+//        self.vendController = nil
+//    }
+//    
+//    func authRequest(_ amount: NSNumber, token: String?) {
+//        print("Auth requested")
+//        
+//        cancelCountdown()
+//        
+//        self.imageView.image = #imageLiteral(resourceName: "Authorizing")
+//        self.pageControl.currentPage = 2
+//        self.textLabel.text = NSLocalizedString("Authorizing your payment Info...", comment: "")
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
+//            self?.vendController.approveAuth("dummyPayload")
+//            
+//            self?.imageView.image = #imageLiteral(resourceName: "Approving")
+//            self?.pageControl.currentPage = 3
+//            self?.textLabel.text = NSLocalizedString("Placing the payment...\n\n$ \(amount)", comment: "")
+//        }
+//    }
+//    
+//    func processStarted() {
+//        print("Process started")
+//    }
+//    
+//    func processCompleted(_ finalAmount: NSNumber, processStatus: ProcessStatus, completedPayload: String) {
+//        print("Process completed")
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+//            if processStatus == .success {
+//                // Show receipt
+//                let amount = String(format: "%0.2f", finalAmount.floatValue)
+//                self?.delegate?.showReceipt(machineName: self?.machine.name ?? "", quantity: 1, amount: "USD \(amount)", cardMaskedPan: "**** 4567")
+//                
+//                self?.delegate?.flowComplete()
+//            } else {
+//                self?.showError(error: "Vending failed")
+//            }
+//        }
+//    }
+//    
+//    func invalidProduct() {
+//        print("Invalid product requested")
+//    }
+//    
+//    func timeoutWarning() {
+//        print("Timeout warning")
+//        
+//        self.vendController.keepAlive()
+//    }
+//}
 
 // MARK: Custom page control
 class PageControl : UIView {
