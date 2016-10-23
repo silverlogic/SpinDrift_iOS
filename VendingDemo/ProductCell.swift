@@ -14,13 +14,13 @@ class ProductCell : UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
+    
 
   //  func configureCell(machine: Machine, image: UIImage) {
         
     func configureCell(product: Product!) {
         productNameLabel?.text = product.name
         productPriceLabel?.text = product.price
-        productImageView.yy_setHighlightedImage(with: product.imageUrl, placeholder:nil)
-
+        productImageView.yy_setImage(with: product.imageUrl, placeholder: nil)
     }
 }
